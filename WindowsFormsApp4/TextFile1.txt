@@ -1,4 +1,7 @@
-﻿     Зависит от. Центробанк, например, на своем сайте курс валют предоставляет в виде xml - тут тогда вообще всё просто: xml вида
+﻿https://csharp.hotexamples.com/examples/-/HtmlAgilityPack.HtmlDocument/-/php-htmlagilitypack.htmldocument-class-examples.html
+
+/***************************************************************************************/
+     Зависит от. Центробанк, например, на своем сайте курс валют предоставляет в виде xml - тут тогда вообще всё просто: xml вида
   <Valute ID="R01010">
     <NumCode>36</NumCode>
     <CharCode>AUD</CharCode>
@@ -63,4 +66,37 @@
         public string Name;
         [XmlElement("Value")]
         public string Value;
+    }
+	================================================
+	using System;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using HtmlAgilityPack;
+ 
+internal class Programm
+{
+    private static void Main()
+    {
+        MainAsync().Wait();
+ 
+        Console.ReadKey(true);
+    }
+ 
+    private static async Task MainAsync()
+    {
+        using (var client = new HttpClient())
+        {
+            var code = await
+                client.GetStringAsync(
+                    "http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/8501.0Main%20Features1May%202015");
+ 
+            var doc = new HtmlDocument();
+            doc.LoadHtml(code);
+ 
+            var q =
+                doc.DocumentNode.SelectNodes(".//td[@class='TableText']//font").Last();
+ 
+            Console.WriteLine(q.InnerText);
+        }
     }

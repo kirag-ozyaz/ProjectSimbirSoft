@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
@@ -73,16 +74,29 @@ namespace ProjectSimbirSoft
                 string url =    txtLink.Text;
 
                 HtmlWeb web = new HtmlWeb();
+                //web.AutoDetectEncoding = true;
+                //web.OverrideEncoding = Encoding.UTF8;
                 HtmlAgilityPack.HtmlDocument doc1 = web.Load(url);
                 string str = doc1.DocumentNode.InnerText;
-
+                str = str.Replace(@"&nbsp;", " ").Replace(@"&lt;", "<").Replace(@"&gt;", ">").Replace(@"&amp;", "&").Replace(@"&quot;", "\"");
+                var multiCRRegex = new Regex(@"\n\n\n+");
+                str = multiCRRegex.Replace(str, "\n\n");
 
                 //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
                 //doc.LoadHtml(url);
                 //HtmlNodeCollection q = doc.DocumentNode.SelectNodes(".//td[@class='TableText']//font");
                 // var q = doc.DocumentNode.SelectNodes(".//td[@class='TableText']//font").Last();
                 // string responseData =q.InnerText;
-               
+
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cbEncoding.Items.Add("AutoDetectEncoding");
+            foreach(var enum1 in cbEncoding.Items)
+            {
+                cbEncoding.Items.Add(enum1);
             }
         }
     }
