@@ -1,0 +1,52 @@
+.tip {
+  display: none;
+  font-size: 12px;
+  color: #fff;
+  max-width: 320px;
+  padding: 10px 0;
+  right: 0;
+  top: 50px;
+}
+.tip .inner {
+  background-color: #07d;
+  border-radius: 2px;
+  position: relative;
+  padding: 10px 35px 14px 15px;
+}
+.tip a {
+  color: #a9d7ff;
+}
+.tip a:hover {
+  color: #fff;
+}
+.tip a.fold {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#claiming-tooltip {
+  display: none;
+  font-size: 12px;
+  color: #fff;
+  max-width: 200px;
+  padding: 10px 0;
+  right: 0;
+  top: 50px;
+}
+#claiming-tooltip .inner {
+  background-color: #dd0001;
+  border-radius: 2px;
+  position: relative;
+  padding: 10px 35px 14px 15px;
+}
+#claiming-tooltip a {
+  color: #ffd1ce;
+}
+#claiming-tooltip a:hover {
+  color: #fff;
+}
+#claiming-tooltip a.fold {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

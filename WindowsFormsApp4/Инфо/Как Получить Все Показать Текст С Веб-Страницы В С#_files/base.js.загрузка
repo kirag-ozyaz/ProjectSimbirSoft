@@ -1,0 +1,208 @@
+function b64_to_str (b64) {
+    return CryptoJS.enc.Utf8.stringify(CryptoJS.enc.Base64.parse(b64));
+}
+
+// new: made 6 vars global, new vars, 2 functions, changed and moved $(window).resize...
+var content_block;
+var footer_block;
+var footer_moved = false;
+var top_menu_login_link_place;
+var login_tooltip;
+var login_link_text;
+var login_link;
+var login_url;
+var claiming_tooltip;
+
+var fix_footer = _.throttle(
+    function () {
+        if (footer_block.length && content_block.length) {
+            if ($(window).height() > footer_block.outerHeight() + content_block.outerHeight() + content_block.offset().top) {
+                footer_block.css({
+                    'position': 'absolute',
+                    'bottom': '0',
+                    'left': '0',
+                    'right': '0'
+                });
+                footer_moved = true;
+            } else if (footer_moved) {
+                footer_block.css({
+                    'position': 'static'
+                });
+                footer_moved = false;
+            }
+        }
+    },
+    50,
+    {leading: false}
+);
+
+var fix_tooltip = _.debounce(function () {
+        if ( ! $.contains(top_menu_login_link_place, login_link)) {
+            login_tooltip.hide();
+            login_link_text.text(b64_to_str('0JLQvtC50YLQuA=='));
+            login_link.attr('href', login_url + '?next=' + location.pathname);
+            top_menu_login_link_place.append(login_link);
+        }
+    }, 0, true
+);
+
+var fix_claiming_tooltip = _.debounce(function () {
+        claiming_tooltip.hide();
+    }, 0, true
+);
+
+$(document).ready(function () {
+    var b64_navs = $('.b64-nav');
+    b64_navs.each(function () {
+        $(this).attr('rel', 'nofollow');
+        var a = $(this).attr('data-next');
+        if (typeof a !== typeof undefined && a !== false) {
+            $(this).attr('data-next', b64_to_str(a))
+        }
+        a = $(this).attr('data-url');
+        if (typeof a !== typeof undefined && a !== false) {
+            $(this).attr('href', b64_to_str(a))
+        }
+        var replacement = $('<a></a>');
+        $.each(this.attributes, function(i, a){
+            $(replacement).attr(a.name, a.value);
+        });
+        $(this).replaceWith(function () {
+            return replacement.append($(this).contents());
+        });
+    });
+    var switches = $('.switch');
+    switches.each(function () {
+        $(this).attr('href', '#');
+        var data_url = $(this).attr('data-url');
+        if (typeof data_url !== typeof undefined && data_url !== false) {
+            $(this).attr('data-url', b64_to_str(data_url))
+        }
+        var replacement = $('<a></a>');
+        $.each(this.attributes, function(i, a){
+            $(replacement).attr(a.name, a.value);
+        });
+        $(this).replaceWith(function () {
+            return replacement.append($(this).contents());
+        });
+    });
+    for (var property in login_to_js_object) {
+        if (login_to_js_object.hasOwnProperty(property)) {
+            login_to_js_object[property] = b64_to_str(login_to_js_object[property]);
+        }
+    }
+    var data = $('#data');
+    var is_anonymous = data.attr('data-is-anonymous');
+    login_url = b64_to_str(data.attr('data-login-url'));
+    var login_required_elements = $('.login-required');
+    login_tooltip = $('#login-tooltip');
+    content_block = $('.content-block');
+    footer_block = $('.footer-block');
+    top_menu_login_link_place = $('#top-menu-login-link-place');
+    login_tooltip.find('.fold').on('click', function() {
+        login_tooltip.hide();
+        login_link_text.text(b64_to_str('0JLQvtC50YLQuA=='));
+        login_link.attr('href', login_url + '?next=' + location.pathname);
+        if ( !$.contains(top_menu_login_link_place, login_link)) {
+            top_menu_login_link_place.append(login_link);
+        }
+    });
+    var tooltip_login_to = login_tooltip.find('.login-to');
+    var tooltip_login_link_place = login_tooltip.find('.login-link-place');
+    login_link = $('#login-link');
+    login_link_text = login_link.find('.login-text');
+    fix_footer();
+    $(window).resize(function () {
+            fix_tooltip();
+            fix_footer();
+            fix_claiming_tooltip();
+        }
+    );
+    if (is_anonymous == 'True') {
+        login_link.attr('href', login_url + '?next=' + location.pathname);
+        login_required_elements.each(function () {
+            var to = $(this).attr('data-to');
+            var next;
+            var data_next = $(this).attr('data-next');
+            data_next ? next = data_next : next = location.pathname;
+            $(this).on('click', function () {
+                tooltip_login_to.text(login_to_js_object[to]);
+                if ( !$.contains(tooltip_login_link_place, login_link)) {
+                    tooltip_login_link_place.append(login_link);
+                }
+                login_link.attr('href', login_url + '?next=' + next + '&to='+to);
+                login_link_text.text(b64_to_str('0LLQvtC50LTQuNGC0LUg0LjQu9C4INC30LDRgNC10LPQuNGB0YLRgNC40YDRg9C50YLQtdGB0Yw='));
+
+                var right_offset = ($(window).width() - ($(this).offset().left + $(this).outerWidth()));
+                var left_offset = $(this).offset().left;
+                var top_offset = $(this).offset().top;
+                var bottom_offset = ($(window).height() - ($(this).offset().top + $(this).outerHeight()));
+                var my;
+                var at;
+                if (right_offset < left_offset) {
+                    my = 'right';
+                    at = 'right';
+                } else {
+                    my = 'left';
+                    at = 'left';
+                }
+                if (top_offset < bottom_offset) {
+                    my = my + ' top';
+                    at = at + ' bottom';
+                } else {
+                    my = my + ' bottom';
+                    at = at + ' top';
+                }
+                login_tooltip.show().position({
+                   my: my,
+                   at: at,
+                   of: $(this),
+                   collision: 'none'
+                });
+                return false;
+            });
+        })
+    }
+
+    // claiming
+    var claiming_elements = $('.claiming-link');
+    claiming_tooltip = $('#claiming-tooltip');
+    var claiming_tooltip_claiming_link = $('#claiming-tooltip-claiming-link');
+    claiming_tooltip.find('.fold').on('click', function() {
+        claiming_tooltip.hide();
+    });
+    claiming_elements.each(function () {
+        $(this).on('click', function () {
+            var claiming_url = $(this).attr('data-claiming-url');
+            claiming_tooltip_claiming_link.attr('href', b64_to_str(claiming_url));
+
+            var right_offset = ($(window).width() - ($(this).offset().left + $(this).outerWidth()));
+            var left_offset = $(this).offset().left;
+            var top_offset = $(this).offset().top;
+            var bottom_offset = ($(window).height() - ($(this).offset().top + $(this).outerHeight()));
+            var my;
+            var at;
+            if (right_offset < left_offset) {
+                my = 'right';
+                at = 'right';
+            } else {
+                my = 'left';
+                at = 'left';
+            }
+            if (top_offset < bottom_offset) {
+                my = my + ' top';
+                at = at + ' bottom';
+            } else {
+                my = my + ' bottom';
+                at = at + ' top';
+            }
+            claiming_tooltip.show().position({
+               my: my,
+               at: at,
+               of: $(this),
+               collision: 'none'
+            });
+            return false;
+        });
+    });
+});

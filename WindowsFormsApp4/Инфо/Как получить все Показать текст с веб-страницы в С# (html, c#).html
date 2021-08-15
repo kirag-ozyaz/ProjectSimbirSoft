@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://qarchive.ru/4253822_kak_poluchit__vse_pokazat__tekst_s_veb_stranitsy_v_s_ -->
+<html lang="ru-RU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+     Как получить все Показать текст с веб-страницы в С# (html, c#)
+</title>
+    
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="verify-admitad" content="6c2ffa2a66">
+
+    <link href="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/css" rel="stylesheet">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Привет, Я работаю над приложениями для очистки данных на С#. На самом деле я хочу получить весь текст на экране, но не теги html. Здесь Мой код HtmlWeb web = new HtmlWeb(); HtmlAgilityPack.HtmlDocument doc = web....">
+    <link href="https://qarchive.ru/4253822_kak_poluchit__vse_pokazat__tekst_s_veb_stranitsy_v_s_" rel="canonical">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://qarchive.ru/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://qarchive.ru/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://qarchive.ru/static/favicon-16x16.png">
+
+
+    <link rel="stylesheet" href="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/bootstrap.min.css">
+
+    <script type="text/javascript" async="" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/analytics.js.загрузка"></script><script type="text/javascript" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/context.js.загрузка" async=""></script><script type="text/javascript" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/context.js.загрузка" async=""></script><script type="text/javascript" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/context.js.загрузка" async=""></script><script async="" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/tag.js.загрузка"></script><script src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/highlight.min.js.загрузка"></script>
+
+    <link rel="stylesheet" href="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/darcula.min.css">
+
+
+    <link rel="stylesheet" href="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/all.min.css">
+
+    <script>
+        function copy(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        }
+
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 60px;
+            font-family: 'Lora', serif;
+            
+            background-color: #808285;
+        }
+
+        header {
+            background-color: #cfd1d4;
+        }
+
+        .badge-unset {
+            font-size: unset;
+            font-family: unset;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+
+
+        code {
+            white-space: pre-wrap;
+        }
+
+        pre {
+            
+            
+            border-color: #6c757d;
+            border-radius: 4px;
+            box-shadow: #6c757d;
+        }
+    </style>
+<script charset="utf-8" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/3def39055e9db7d887e2.js.загрузка" crossorigin="anonymous" importance="high"></script><script async="" crossorigin="anonymous" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/host.js.загрузка"></script><link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://yastatic.net/partner-code-bundles/42626/context_static.js"><link rel="preconnect" href="https://ads.adfox.ru/"><script charset="utf-8" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/e719f8a701e90618b0e7.js.загрузка" crossorigin="anonymous" importance="high"></script><script charset="utf-8" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/1a27454f1f0efa343ff4.js.загрузка" crossorigin="anonymous" importance="high"></script><script charset="utf-8" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/396a1167d70821abf186.js.загрузка" crossorigin="anonymous" importance="high"></script><script charset="utf-8" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/2710944224f5f6585ce7.js.загрузка" crossorigin="anonymous" importance="high"></script></head>
+
+<body>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(53136553, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53136553" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-137016277-2');
+</script>
+
+
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="https://qarchive.ru/4253822_kak_poluchit__vse_pokazat__tekst_s_veb_stranitsy_v_s_#">
+            <img src="./Как получить все Показать текст с веб-страницы в С# (html, c#)_files/logo.png" height="30" class="d-inline-block align-top" alt="Архив вопросов и ответов для программистов">
+        </a>
+    </nav>
+</header>
+
+
+<main role="main" class="container-fluid mt-3">
+
+    <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-9 col-md-12">
+
+            <div class="row d-flex align-items-center justify-content-center">
+
+                <div class="col-12 col-md-10 h-100">
+                    
+
+    <div class="card text-center bg-transparent border-0 my-3">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Yandex.RTB R-A-466872-2 -->
+        <div id="yandex_rtb_R-A-466872-2"></div>
+        <script type="text/javascript">
+            (function(w, d, n, s, t) {
+                w[n] = w[n] || [];
+                w[n].push(function() {
+                    Ya.Context.AdvManager.render({
+                        blockId: "R-A-466872-2",
+                        renderTo: "yandex_rtb_R-A-466872-2",
+                        async: true
+                    });
+                });
+                t = d.getElementsByTagName("script")[0];
+                s = d.createElement("script");
+                s.type = "text/javascript";
+                s.src = "//an.yandex.ru/system/context.js";
+                s.async = true;
+                t.parentNode.insertBefore(s, t);
+            })(this, this.document, "yandexContextAsyncCallbacks");
+        </script>
+
+    
+    </div>
+
+    <div class="card border-light bg-light shadow">
+        <div class="card-header bg-light">
+            <h1 class="mx-auto text-justify text-center"> Как получить все Показать текст с веб-страницы в С#</h1>
+        </div>
+        <div class="card-body">
+            <p>
+                
+                    <span class="badge badge-pill badge-primary badge-unset">
+                        <i class="fas fa-thumbs-up"></i>
+                        2
+                    </span>
+                
+                <span class="float-right">
+                    <a target="_blank" href="https://stackoverflow.com/users/2802142/guria-doll">Guria Doll</a>
+                    [2013-10-26 11:22:00]
+                </span>
+            </p>
+            <p>
+</p><p> Привет, Я работаю над приложениями для очистки данных на С#.</p> <p> На самом деле я хочу получить весь текст на экране, но не теги html.</p> <p> Здесь Мой код</p> <pre><code class="hljs cpp">HtmlWeb web  = <span class="hljs-keyword">new</span> HtmlWeb();
+HtmlAgilityPack.HtmlDocument doc = web.
+   Load(@<span class="hljs-string">"http://dawateislami.net/books/bookslibrary.do#!section:bookDetail_521.tr"</span>);
+<span class="hljs-built_in">string</span> str =  doc.DocumentNode.InnerText;
+</code></pre> <p> Этот внутренний html возвращает некоторые теги и скрипты, но я хочу получить только отображаемый текст, видимый пользователю. Пожалуйста, помогите мне. благодаря</p> <p></p>
+            <p>
+                
+                    <span class="badge badge-secondary p-1">html</span>
+                
+                    <span class="badge badge-secondary p-1">c#</span>
+                
+            </p>
+        </div>
+
+        <div class="card-footer bg-transparent">
+            <p class="mb-0">
+                <cite title="Источник" class="float-right">
+                    <a target="_blank" href="https://stackoverflow.com/questions/19604577/how-to-get-all-display-text-from-a-webpage-in-c">
+                        Оригинал вопроса
+                        <small>(на английском)</small>
+                    </a>
+                </cite>
+            </p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="m-3">
+
+        <h3 class="text-light text-right">
+            3 ответа
+        </h3>
+    </div>
+
+    <div class="card text-center bg-transparent border-0">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Yandex.RTB R-A-466872-1 -->
+        <div id="yandex_rtb_R-A-466872-1"></div>
+        <script type="text/javascript">
+            (function(w, d, n, s, t) {
+                w[n] = w[n] || [];
+                w[n].push(function() {
+                    Ya.Context.AdvManager.render({
+                        blockId: "R-A-466872-1",
+                        renderTo: "yandex_rtb_R-A-466872-1",
+                        async: true
+                    });
+                });
+                t = d.getElementsByTagName("script")[0];
+                s = d.createElement("script");
+                s.type = "text/javascript";
+                s.src = "//an.yandex.ru/system/context.js";
+                s.async = true;
+                t.parentNode.insertBefore(s, t);
+            })(this, this.document, "yandexContextAsyncCallbacks");
+        </script>
+
+
+    
+    </div>
+
+    
+        <hr>
+        <div class="
+                card shadow
+                
+                border-light
+                
+                align-self-center">
+
+            <div class="card-header bg-light pb-0">
+                <p>
+                    
+                        <span class="badge badge-pill badge-primary badge-unset">
+                            <i class="fas fa-thumbs-up"></i>
+                            1
+                        </span>
+                    
+
+                    
+
+                    <span class="float-right">
+                        <a target="_blank" href="https://stackoverflow.com/users/2263683/alex-jolig">Alex Jolig</a>
+                        [2014-03-03 07:54:00]
+                    </span>
+
+                </p>
+
+            </div>
+
+            <div class="card-body">
+                
+<p> [Я считаю, что это решит проблему ур] [1]</p> <p> Метод 1 - Вырезание и вставка памяти</p> <p> Используйте объект управления WebBrowser для обработки веб-страницы, а затем скопируйте текст из элемента управления...</p> <p> Используйте следующий код для загрузки веб-страницы: Свернуть | Копировать код</p> <pre><code class="hljs cpp"><span class="hljs-comment">//Create the WebBrowser control</span>
+WebBrowser wb = <span class="hljs-keyword">new</span> WebBrowser();
+<span class="hljs-comment">//Add a new event to process document when download is completed   </span>
+wb.DocumentCompleted +=
+    <span class="hljs-keyword">new</span> WebBrowserDocumentCompletedEventHandler(DisplayText);
+<span class="hljs-comment">//Download the webpage</span>
+wb.Url = urlPath;
+</code></pre> <p> Используйте следующий код события для обработки загруженного текста веб-страницы: Свернуть | Копировать код</p> <pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">DisplayText</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, WebBrowserDocumentCompletedEventArgs e</span>)</span>
+{
+WebBrowser wb = (WebBrowser)sender;
+wb.Document.ExecCommand(<span class="hljs-string">"SelectAll"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">null</span>);
+wb.Document.ExecCommand(<span class="hljs-string">"Copy"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">null</span>);
+textResultsBox.Text = CleanText(Clipboard.GetText());
+}
+</code></pre> <p> Метод 2 - Объект выбора памяти</p>
+
+ <p> Это второй способ обработки загруженного текста веб-страницы. Кажется, это займет немного больше времени (очень минимальная разница). Однако он избегает использования буфера обмена и ограничений, связанных с этим. Свернуть | Копировать код</p> <pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">DisplayText</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, WebBrowserDocumentCompletedEventArgs e</span>)</span>
+{   <span class="hljs-comment">//Create the WebBrowser control and IHTMLDocument2</span>
+WebBrowser wb = (WebBrowser)sender;
+IHTMLDocument2 htmlDocument =
+wb.Document.DomDocument <span class="hljs-keyword">as</span> IHTMLDocument2;
+<span class="hljs-comment">//Select all the text on the page and create a selection object</span>
+wb.Document.ExecCommand(<span class="hljs-string">"SelectAll"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">null</span>);
+IHTMLSelectionObject currentSelection = htmlDocument.selection;
+<span class="hljs-comment">//Create a text range and send the ranges text to your text box</span>
+IHTMLTxtRange range = currentSelection.createRange() <span class="hljs-keyword">as</span> IHTMLTxtRange
+textResultsBox.Text = range.text;
+}
+</code></pre> <p> Метод 3 - Элегантный, простой, медленный подход XmlDocument</p> <p> Хороший друг поделился этим примером со мной. Я большой поклонник простого, и этот пример выигрывает конкурс простоты. К сожалению, он был очень медленным по сравнению с двумя другими подходами.</p> <p> Объект XmlDocument будет загружать/обрабатывать файлы HTML только с тремя простыми строками кода: Collapse | Копировать код</p> <pre><code class="hljs coffeescript">XmlDocument <span class="hljs-built_in">document</span> = <span class="hljs-keyword">new</span> XmlDocument();
+<span class="hljs-built_in">document</span>.Load(<span class="hljs-string">"www.yourwebsite.com"</span>);
+string allText = <span class="hljs-built_in">document</span>.InnerText;
+</code></pre> <p> Вот он! Три простых способа очистить только отображаемый текст с веб-страниц без участия внешних пакетов. пакеты</p> 
+            </div>
+            <div class="card-footer bg-transparent">
+                <p class="mb-0">
+                    <cite title="Источник" class="float-right">
+                        <a target="_blank" href="https://stackoverflow.com/questions/19604577/how-to-get-all-display-text-from-a-webpage-in-c/22138939#22138939">
+                            Оригинал ответа
+                            <small>(на английском)</small>
+                        </a>
+                    </cite>
+                </p>
+            </div>
+        </div>
+    
+        <hr>
+        <div class="
+                card shadow
+                
+                border-light
+                
+                align-self-center">
+
+            <div class="card-header bg-light pb-0">
+                <p>
+                    
+                        <span class="badge badge-pill badge-secondary badge-unset">
+                            0
+                        </span>
+                    
+
+                    
+
+                    <span class="float-right">
+                        <a target="_blank" href="https://stackoverflow.com/users/1682415/avishek">Avishek</a>
+                        [2013-10-26 13:22:00]
+                    </span>
+
+                </p>
+
+            </div>
+
+            <div class="card-body">
+                
+<p> Для удаления всех тегов html из строки вы можете использовать:</p> <pre><code class="hljs javascript"><span class="hljs-built_in">String</span> output = inputString.replaceAll(<span class="hljs-string">"&lt;[^&gt;]*&gt;"</span>, <span class="hljs-string">""</span>);
+</code></pre> <p> Для удаления определенного тега:</p>
+
+ <pre><code class="hljs javascript"><span class="hljs-built_in">String</span> output = inputString.replaceAll(<span class="hljs-string">"(?i)&lt;td[^&gt;]*&gt;"</span>, <span class="hljs-string">""</span>);
+</code></pre> <p> Надеюсь, поможет :)</p> 
+            </div>
+            <div class="card-footer bg-transparent">
+                <p class="mb-0">
+                    <cite title="Источник" class="float-right">
+                        <a target="_blank" href="https://stackoverflow.com/questions/19604577/how-to-get-all-display-text-from-a-webpage-in-c/19605563#19605563">
+                            Оригинал ответа
+                            <small>(на английском)</small>
+                        </a>
+                    </cite>
+                </p>
+            </div>
+        </div>
+    
+        <hr>
+        <div class="
+                card shadow
+                
+                border-light
+                
+                align-self-center">
+
+            <div class="card-header bg-light pb-0">
+                <p>
+                    
+                        <span class="badge badge-pill badge-secondary badge-unset">
+                            0
+                        </span>
+                    
+
+                    
+
+                    <span class="float-right">
+                        <a target="_blank" href="https://stackoverflow.com/users/1186505/junichiro">junichiro</a>
+                        [2013-10-26 11:27:00]
+                    </span>
+
+                </p>
+
+            </div>
+
+            <div class="card-body">
+                
+<p> Чтобы удалить javascript и css:</p> <pre><code class="hljs cs"><span class="hljs-keyword">foreach</span>(<span class="hljs-keyword">var</span> script <span class="hljs-keyword">in</span> doc.DocumentNode.Descendants(<span class="hljs-string">"script"</span>).ToArray())
+    script.Remove();
+<span class="hljs-keyword">foreach</span>(<span class="hljs-keyword">var</span> style <span class="hljs-keyword">in</span> doc.DocumentNode.Descendants(<span class="hljs-string">"style"</span>).ToArray())
+    style.Remove();
+</code></pre> <p> Чтобы удалить комментарии (непроверенные):</p> <pre><code class="hljs cs"><span class="hljs-keyword">foreach</span>(<span class="hljs-keyword">var</span> comment <span class="hljs-keyword">in</span> doc.DocumentNode.Descendants(<span class="hljs-string">"//comment()"</span>).ToArray())
+    comment.Remove()
+</code></pre> 
+            </div>
+            <div class="card-footer bg-transparent">
+                <p class="mb-0">
+                    <cite title="Источник" class="float-right">
+                        <a target="_blank" href="https://stackoverflow.com/questions/19604577/how-to-get-all-display-text-from-a-webpage-in-c/19604605#19604605">
+                            Оригинал ответа
+                            <small>(на английском)</small>
+                        </a>
+                    </cite>
+                </p>
+            </div>
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-2 d-none d-lg-block">
+            
+                
+                    <!-- Yandex.RTB R-A-466872-4 -->
+                    <div id="yandex_rtb_R-A-466872-4"></div>
+                    <script type="text/javascript">
+                        (function(w, d, n, s, t) {
+                            w[n] = w[n] || [];
+                            w[n].push(function() {
+                                Ya.Context.AdvManager.render({
+                                    blockId: "R-A-466872-4",
+                                    renderTo: "yandex_rtb_R-A-466872-4",
+                                    async: true
+                                });
+                            });
+                            t = d.getElementsByTagName("script")[0];
+                            s = d.createElement("script");
+                            s.type = "text/javascript";
+                            s.src = "//an.yandex.ru/system/context.js";
+                            s.async = true;
+                            t.parentNode.insertBefore(s, t);
+                        })(this, this.document, "yandexContextAsyncCallbacks");
+                    </script>
+                
+            
+        </div>
+
+    </div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+</body></html>

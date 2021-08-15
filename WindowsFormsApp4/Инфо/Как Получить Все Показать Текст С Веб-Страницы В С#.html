@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567 -->
+<html lang="ru" itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Как Получить Все Показать Текст С Веб-Страницы В С#</title>
+
+        <meta name="description" content="Привет, Я работаю над приложениями для очистки данных на С#. На самом деле я хочу получить весь текст на экране, но не теги html. Здесь Мой код HtmlWeb web = new HtmlWeb(); HtmlAgilityPack.Html...">
+
+        <meta name="keywords" content="как получить все показать текст с веб-страницы в с#">
+        <link rel="canonical" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567">
+
+        
+        
+<link rel="apple-touch-icon" sizes="57x57" href="https://progi.pro/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://progi.pro/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://progi.pro/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://progi.pro/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://progi.pro/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://progi.pro/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://progi.pro/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://progi.pro/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://progi.pro/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="https://progi.pro/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://progi.pro/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="https://progi.pro/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://progi.pro/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="https://progi.pro/favicon-16x16.png" sizes="16x16">
+
+<link rel="mask-icon" href="https://progi.pro/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="progi.pro">
+<meta name="application-name" content="progi.pro">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(5).txt"></script><script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/osd.js.загрузка"></script><script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(6).txt"></script><script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(7).txt" id="google_shimpl"></script><script type="text/javascript" async="" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/analytics.js.загрузка"></script><script type="text/javascript" async="" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/recaptcha__ru.js.загрузка" crossorigin="anonymous" integrity="sha384-K41EbZTN98Fhn7n1dTVX6UDXqbTb98O7HlyatWM/ebsN+G4JewWgwFj/86EyFKSu"></script><script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/jquery-1.10.2.min.js.загрузка"></script>
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/jquery-ui.min.js.загрузка"></script>
+    <link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/css(1)" rel="stylesheet" type="text/css">
+    <link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/font-awesome.min.css">
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/bootstrap.min.js.загрузка"></script>
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/core-min.js.загрузка"></script>
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/enc-base64-min.js.загрузка"></script>
+
+<script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/api.js.загрузка" async="" defer=""></script>
+<script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/general.js.загрузка"></script>
+<script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/active_prevent_default.js.загрузка"></script>
+<link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/base.css" rel="stylesheet" type="text/css">
+<link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/misc.css" rel="stylesheet" type="text/css">
+<link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/navbar.css" rel="stylesheet" type="text/css">
+<link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/captcha.css" rel="stylesheet" type="text/css">
+<link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/tooltip.css" rel="stylesheet" type="text/css">
+<script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/utils.js.загрузка"></script>
+        <script id="data" data-is-anonymous="True" data-login-url="L2xvZ2lu"></script>
+        <script>var login_to_js_object = {favorite:"0LTQvtCx0LDQstC70Y/RgtGMINCyINC40LfQsdGA0LDQvdC90L7QtQ==",comment:"0LrQvtC80LzQtdC90YLQuNGA0L7QstCw0YLRjA=="};</script>
+        <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/base.js.загрузка"></script>
+        
+    <meta name="twitter:title" property="og:title" itemprop="name" content="Как Получить Все Показать Текст С Веб-Страницы В С#">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="progi.pro">
+
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Привет, Я работаю над приложениями для очистки данных на С#. На самом деле я хочу получить весь текст на экране, но не теги html. Здесь Мой код HtmlWeb web = new HtmlWeb(); HtmlAgilityPack.Html...">
+
+    <meta property="og:url" content="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://progi.pro/static/icons/apple-touch-icon-precomposed.png">
+
+    <link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/question.css" rel="stylesheet" type="text/css">
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/question.js.загрузка"></script>
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/forms.js.загрузка"></script>
+
+    <link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/redactor.css" rel="stylesheet" type="text/css">
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/redactor.js.загрузка"></script>
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/counter.js.загрузка"></script>
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/ru.js.загрузка"></script>
+    <script src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/wysiwyg.js.загрузка"></script>
+    <link href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/wysiwyg.css" rel="stylesheet" type="text/css">
+
+
+        <script data-ad-client="ca-pub-2023889461799885" async="" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(8).txt" data-checked-head="true"></script>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+    <meta http-equiv="origin-trial" content="A88otRz1Fd3Nt567e2IYshC18LL3KGVXpVJW9oTCId4RYaygt23pbb4JqrbdIO/bwZPWEmRjBIRBu/bZbDR7Pg4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A0gCLbXCcL0R1Oc8tFPDs0G4Elz17w3zHp+Zst66+D17veE2o7fUcPsA114QtSTRqfVJLMeTSdeWOom0CcyCsgYAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9RQ+LxFazAousxUwSCzaihJjHLO1UyjQp0teZKHl7WdbVjPDfHSKMd6D/ZI5MTjqClFycbl70EFd7cBJWXqKQEAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6WKeWsdn1Ct+ZPqS9NCxxaiBoQ7wdTkK2/gE69Yu0gfBKJfo1gOvgkGmf5/xaIajT/RUb9AbnF1FsSZ47cCcQcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A04ZCu7yjrHgwQJK5ISHhH1DSg0qqowEay3n70KO6wV3D2Mj+OX3Kw20aSMitzgdG1xfrN7sOJV/dZIk+RvCzA4AAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjM0MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A2YAd4xOntTGygIDjApOTtXOgVI3IWsd5OnOGq3RbRkIQwyqYWNl1JGRAcvtm6VOHDj4n07T/J19VqLuJn3MmQ8AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A2c5Ux+hivdkLh/KbZUGr6f7SCR0mZrBVfPJ+/OuDVHNwiYv+Lo83b9z5qL8sod78bQl0pSLtbvRWURo+xRl7AIAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="AzNJ4sd3tVurolpdvWYZ4cmP9Po7RJhEHSqmC3pgxW9fFVZvchhtcMUgHAs97npxMD1jhXHO8s6q6Wy1MMLxKgEAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><link rel="preload" href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(9).txt" as="script"><script type="text/javascript" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(9).txt"></script><link rel="preload" href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(10).txt" as="script"><script type="text/javascript" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(10).txt"></script><link rel="preload" href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(9).txt" as="script"><script type="text/javascript" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(9).txt"></script><link rel="preload" href="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(10).txt" as="script"><script type="text/javascript" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/f(10).txt"></script></head>
+    <body id="top" style="" aria-hidden="false">
+    
+
+        
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-default navbar-static z-top">
+              <div class="container">
+                
+                <div class="navbar-header hidden-xs">
+                    <a class="navbar-brand" href="https://progi.pro/"><span class="glyphicon glyphicon-ok"></span></a>
+                </div>
+                    
+                    
+                    
+                      <ul class="nav navbar-nav navbar-right">
+                        
+                            <li id="top-menu-login-link-place">
+                                <a id="login-link" class="login b64-nav" rel="nofollow" href="https://progi.pro/login?next=/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567"><span class="glyphicon glyphicon-log-in"></span> <span class="login-text">Войти</span></a>
+                            </li>
+                        
+
+                          
+                      </ul>
+
+              </div>
+            </nav><!--/Fixed navbar-->
+        
+
+        
+            <div class="header-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                                <div class="header-wrapper">
+
+                                    <div class="logo-block">
+                                        <a href="https://progi.pro/"><img alt="Вопросы и ответы" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/logo@2x.png" class="logo">
+                                        <div class="motto">progi<span class="dot">.</span>pro<div class="desc">все IT вопросы и ответы</div></div></a>
+                                    </div>
+
+                                    <div class="navigation">
+                                        <div class="navigation-wrapper">
+                                            
+                                                <a data-url="L2Fzaw==" class="login-required b64-nav ask" data-next="/ask" data-to="ask" rel="nofollow" href="https://progi.pro/ask">Задать вопрос</a>
+                                        </div>
+                                    </div>
+
+                                    <div id="search-form-wrapper">
+                                        <form class="main-search" id="search-form" action="https://progi.pro/search" method="get">
+                                            <div class="search">
+                                                <div class="button-wrapper">
+                                                    <button class="btn btn-default btn-search search" type="submit">
+                                                        <span class="glyphicon glyphicon-search search-icon"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="input-wrapper">
+                                                    <input id="search" type="text" class="form-control-icon search" placeholder="Ваш вопрос" name="q" value="">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container content-block">
+                <div id="content" class="">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            
+                                
+                            
+
+                            <div class="content-wrapper clear-both" itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+                                
+    
+    <div class="row">
+        <div class="col-md-9 col mainbar">
+            
+
+    <h1 itemprop="name"><a href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567" class="question-hyperlink">Как получить все Показать текст с веб-страницы в С#</a></h1>
+
+    <link itemprop="image" href="https://progi.pro/static/icons/apple-touch-icon-precomposed.png" wfd-invisible="true">
+
+
+
+    
+
+
+
+    
+
+<div class="post question">
+    
+    <div class="approval-block">
+        <a data-url="/approval/upvote/question/78567" class="approval upvote login-required switch" data-to="vote" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+        </a>
+        <div class="votes" itemprop="upvoteCount">
+            78
+        </div>
+        <a data-url="/approval/downvote/question/78567" class="approval downvote login-required switch" data-to="vote" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+        </a>
+        
+            <a data-url="/approval/favorite/question/78567" class="approval favorite login-required switch" data-to="favorite" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+                <span class="glyphicon glyphicon-star"></span>
+            </a>
+            <div class="favorites favorite-count ">
+                10
+            </div>
+        
+    </div>
+    <div class="main-block">
+        <div class="data">
+            <div class="body" itemprop="text">
+                
+                    <p></p><p> Привет, Я работаю над приложениями для очистки данных на С#.</p> <p> На самом деле я хочу получить весь текст на экране, но не теги html.</p> <p> Здесь Мой код</p> <pre><code>HtmlWeb web  = new HtmlWeb();<br>HtmlAgilityPack.HtmlDocument doc = web.<br>   Load(@"http://dawateislami.net/books/bookslibrary.do#!section:bookDetail_521.tr");<br>string str =  doc.DocumentNode.InnerText;<br></code></pre> <p> Этот внутренний html возвращает некоторые теги и скрипты, но я хочу получить только отображаемый текст, видимый пользователю. Пожалуйста, помогите мне. благодаря</p><p></p>
+                
+            </div>
+            
+                <div class="tag-list">
+                    
+                        <a class="tag" href="https://progi.pro/c-t78">
+                            c#
+                        </a>
+                    
+                        <a class="tag" href="https://progi.pro/html-t1">
+                            html
+                        </a>
+                    
+                </div>
+            
+            <div id="question-78567-comments" class="date-author-block question-type">
+                <div class="date">
+                    спросил(а)
+                    
+                        <span style="display:none;" itemprop="dateCreated" wfd-invisible="true">2013-10-26T11:22:00+04:00</span>
+                        <span>7&nbsp;лет, 9&nbsp;месяцев назад</span>
+                    
+                </div>
+                <div class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                    <img src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/50b0efb162eb7b91f097040bd4585522" class="avatar"><a class="b64-nav" data-url="L3VzZXIxMzI1NjM=" rel="nofollow" href="https://progi.pro/user132563">Guria Doll</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+        <div class="controls">
+            <div class="control-block main">
+                <div class="control add-comment">
+                    <a data-id="78567" data-type="question" class="first login-required switch add-comment-btn" data-to="comment" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+                        <i class="fa fa-comment-o"></i> добавить комментарий
+                    </a>
+                </div>
+
+                <div class="control report">
+                    <a data-claiming-url="L3VzZXIxMzI1NjMvY2xhaW0=" data-url="amF2YXNjcmlwdDp2b2lkKDAp" class="b64-nav claiming-link" rel="nofollow" href="javascript:void(0)">
+                        <i class="fa fa-warning"></i> пожаловаться
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <span style="display:none;" itemprop="answerCount" wfd-invisible="true">1</span>
+
+    
+
+    
+        <div class="answer-list-header">
+            Решение
+        </div>
+        <div>
+            
+
+<div id="answer-116263" class="post answer" itemprop="
+                suggestedAnswer
+                acceptedAnswer
+            " itemscope="" itemtype="http://schema.org/Answer">
+    
+    <div class="approval-block">
+        <a data-url="/approval/upvote/answer/116263" class="approval upvote login-required switch" data-to="vote" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+        </a>
+        <div class="votes" itemprop="upvoteCount">
+            63
+        </div>
+        <a data-url="/approval/downvote/answer/116263" class="approval downvote login-required switch" data-to="vote" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+        </a>
+        
+            
+                <a data-url="/approval/solution/78567/116263" class="approval solution solved login-required switch" data-to="solve" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </a>
+            
+        
+    </div>
+    <div class="main-block">
+        <div class="data">
+            <div class="body" itemprop="text">
+                
+                    <p></p><p> [Я считаю, что это решит проблему ур] [1]</p> <p> Метод 1 - Вырезание и вставка памяти</p> <p> Используйте объект управления WebBrowser для обработки веб-страницы, а затем скопируйте текст из элемента управления...</p> <p> Используйте следующий код для загрузки веб-страницы: Свернуть | Копировать код</p> <pre><code>//Create the WebBrowser control<br>WebBrowser wb = new WebBrowser();<br>//Add a new event to process document when download is completed   <br>wb.DocumentCompleted +=<br>    new WebBrowserDocumentCompletedEventHandler(DisplayText);<br>//Download the webpage<br>wb.Url = urlPath;<br></code></pre> <p> Используйте следующий код события для обработки загруженного текста веб-страницы: Свернуть | Копировать код</p> <pre><code>private void DisplayText(object sender, WebBrowserDocumentCompletedEventArgs e)<br>{<br>WebBrowser wb = (WebBrowser)sender;<br>wb.Document.ExecCommand("SelectAll", false, null);<br>wb.Document.ExecCommand("Copy", false, null);<br>textResultsBox.Text = CleanText(Clipboard.GetText());<br>}<br></code></pre> <p> Метод 2 - Объект выбора памяти</p><p></p>
+
+<p></p><p> Это второй способ обработки загруженного текста веб-страницы. Кажется, это займет немного больше времени (очень минимальная разница). Однако он избегает использования буфера обмена и ограничений, связанных с этим. Свернуть | Копировать код</p> <pre><code>private void DisplayText(object sender, WebBrowserDocumentCompletedEventArgs e)<br>{   //Create the WebBrowser control and IHTMLDocument2<br>WebBrowser wb = (WebBrowser)sender;<br>IHTMLDocument2 htmlDocument =<br>wb.Document.DomDocument as IHTMLDocument2;<br>//Select all the text on the page and create a selection object<br>wb.Document.ExecCommand("SelectAll", false, null);<br>IHTMLSelectionObject currentSelection = htmlDocument.selection;<br>//Create a text range and send the ranges text to your text box<br>IHTMLTxtRange range = currentSelection.createRange() as IHTMLTxtRange<br>textResultsBox.Text = range.text;<br>}<br></code></pre> <p> Метод 3 - Элегантный, простой, медленный подход XmlDocument</p> <p> Хороший друг поделился этим примером со мной. Я большой поклонник простого, и этот пример выигрывает конкурс простоты. К сожалению, он был очень медленным по сравнению с двумя другими подходами.</p> <p> Объект XmlDocument будет загружать/обрабатывать файлы HTML только с тремя простыми строками кода: Collapse | Копировать код</p> <pre><code>XmlDocument document = new XmlDocument();<br>document.Load("www.yourwebsite.com");<br>string allText = document.InnerText;<br></code></pre> <p> Вот он! Три простых способа очистить только отображаемый текст с веб-страниц без участия внешних пакетов. пакеты</p><p></p>
+                
+            </div>
+            
+            <div id="answer-116263-comments" class="date-author-block ">
+                <div class="date">
+                    ответил(а)
+                    
+                        <span style="display:none;" itemprop="dateCreated" wfd-invisible="true">2014-03-03T07:54:00+04:00</span>
+                        <span>7&nbsp;лет, 5&nbsp;месяцев назад</span>
+                    
+                </div>
+                <div class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                    <img src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/2f541781c13505f572bf0a37a51584e8" class="avatar"><a class="b64-nav" data-url="L3VzZXIxMzI1NjQ=" rel="nofollow" href="https://progi.pro/user132564">Alex Jolig</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+        <div class="controls">
+            <div class="control-block main">
+                <div class="control add-comment">
+                    <a data-id="116263" data-type="answer" class="first login-required switch add-comment-btn" data-to="comment" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+                        <i class="fa fa-comment-o"></i> добавить комментарий
+                    </a>
+                </div>
+
+                <div class="control report">
+                    <a data-claiming-url="L3VzZXIxMzI1NjQvY2xhaW0=" data-url="amF2YXNjcmlwdDp2b2lkKDAp" class="b64-nav claiming-link" rel="nofollow" href="javascript:void(0)">
+                        <i class="fa fa-warning"></i> пожаловаться
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+        </div>
+        
+
+
+        
+    
+
+    
+
+    
+    <div class="answer-list">
+        
+            
+        
+            
+                
+                    
+
+<div id="answer-116264" class="post answer" itemscope="" itemtype="http://schema.org/Answer">
+    
+    <div class="approval-block">
+        <a data-url="/approval/upvote/answer/116264" class="approval upvote login-required switch" data-to="vote" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+        </a>
+        <div class="votes" itemprop="upvoteCount">
+            45
+        </div>
+        <a data-url="/approval/downvote/answer/116264" class="approval downvote login-required switch" data-to="vote" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+        </a>
+        
+            
+        
+    </div>
+    <div class="main-block">
+        <div class="data">
+            <div class="body" itemprop="text">
+                
+                    <p></p><p> Для удаления всех тегов html из строки вы можете использовать:</p> <pre><code>String output = inputString.replaceAll("&lt;[^&gt;]*&gt;", "");<br></code></pre> <p> Для удаления определенного тега:</p><br><pre><code>String output = inputString.replaceAll("(?i)&lt;td[^&gt;]*&gt;", "");<br></code></pre> <p> Надеюсь, поможет :)</p><p></p>
+                
+            </div>
+            
+            <div id="answer-116264-comments" class="date-author-block ">
+                <div class="date">
+                    ответил(а)
+                    
+                        <span style="display:none;" itemprop="dateCreated" wfd-invisible="true">2013-10-26T13:22:00+04:00</span>
+                        <span>7&nbsp;лет, 9&nbsp;месяцев назад</span>
+                    
+                </div>
+                <div class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                    <img src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/b4357800a736ec4c76fdc073ead48ac9" class="avatar"><a class="b64-nav" data-url="L3VzZXIxMzI1NjU=" rel="nofollow" href="https://progi.pro/user132565">Avishek</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+        <div class="controls">
+            <div class="control-block main">
+                <div class="control add-comment">
+                    <a data-id="116264" data-type="answer" class="first login-required switch add-comment-btn" data-to="comment" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+                        <i class="fa fa-comment-o"></i> добавить комментарий
+                    </a>
+                </div>
+
+                <div class="control report">
+                    <a data-claiming-url="L3VzZXIxMzI1NjUvY2xhaW0=" data-url="amF2YXNjcmlwdDp2b2lkKDAp" class="b64-nav claiming-link" rel="nofollow" href="javascript:void(0)">
+                        <i class="fa fa-warning"></i> пожаловаться
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+                
+            
+        
+            
+                
+                    
+
+<div id="answer-116265" class="post answer" itemscope="" itemtype="http://schema.org/Answer">
+    
+    <div class="approval-block">
+        <a data-url="/approval/upvote/answer/116265" class="approval upvote login-required switch" data-to="vote" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+        </a>
+        <div class="votes" itemprop="upvoteCount">
+            45
+        </div>
+        <a data-url="/approval/downvote/answer/116265" class="approval downvote login-required switch" data-to="vote" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+        </a>
+        
+            
+        
+    </div>
+    <div class="main-block">
+        <div class="data">
+            <div class="body" itemprop="text">
+                
+                    <p></p><p> Чтобы удалить javascript и css:</p> <pre><code>foreach(var script in doc.DocumentNode.Descendants("script").ToArray())<br>    script.Remove();<br>foreach(var style in doc.DocumentNode.Descendants("style").ToArray())<br>    style.Remove();<br></code></pre> <p> Чтобы удалить комментарии (непроверенные):</p> <pre><code>foreach(var comment in doc.DocumentNode.Descendants("//comment()").ToArray())<br>    comment.Remove()<br></code></pre><p></p>
+                
+            </div>
+            
+            <div id="answer-116265-comments" class="date-author-block ">
+                <div class="date">
+                    ответил(а)
+                    
+                        <span style="display:none;" itemprop="dateCreated" wfd-invisible="true">2013-10-26T11:27:00+04:00</span>
+                        <span>7&nbsp;лет, 9&nbsp;месяцев назад</span>
+                    
+                </div>
+                <div class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                    <img src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/2b93ed9516cb33d51beb3af3d7f21fce" class="avatar"><a class="b64-nav" data-url="L3VzZXIxMzI1NjY=" rel="nofollow" href="https://progi.pro/user132566">junichiro</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+        <div class="controls">
+            <div class="control-block main">
+                <div class="control add-comment">
+                    <a data-id="116265" data-type="answer" class="first login-required switch add-comment-btn" data-to="comment" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">
+                        <i class="fa fa-comment-o"></i> добавить комментарий
+                    </a>
+                </div>
+
+                <div class="control report">
+                    <a data-claiming-url="L3VzZXIxMzI1NjYvY2xhaW0=" data-url="amF2YXNjcmlwdDp2b2lkKDAp" class="b64-nav claiming-link" rel="nofollow" href="javascript:void(0)">
+                        <i class="fa fa-warning"></i> пожаловаться
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+                
+            
+        
+    </div>
+
+    <div id="answer" class="answer-form-header">
+        Ваш ответ
+    </div>
+
+    
+<form id="answer-form" action="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#answer" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="bJyCcT8zCrpi7NNrj9KKfXKhUjxmsqbtDy7EO3tCQJWb3W52xt4MnvYlbtsJ4nvB" wfd-invisible="true">
+    
+
+    
+        <div class="form-group">
+            <div class="redactor-box" role="application"><ul class="redactor-toolbar" id="redactor-toolbar-0" role="toolbar" style="position: relative; width: auto; top: 0px; left: 0px; visibility: visible;"><li><a href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#" class="re-icon re-pre" rel="pre" role="button" aria-label="Код" tabindex="-1"></a></li><li><a href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#" class="re-icon re-blockquote" rel="blockquote" role="button" aria-label="Цитата" tabindex="-1"></a></li><li><a href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#" class="re-icon re-unorderedlist" rel="unorderedlist" role="button" aria-label="&amp;bull; Список" tabindex="-1"></a></li><li><a href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#" class="re-icon re-link redactor-toolbar-link-dropdown" rel="link" role="button" aria-label="Ссылка" tabindex="-1" aria-haspopup="true"></a></li><li><a href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#" class="re-icon re-image" rel="image" role="button" aria-label="Изображение" tabindex="-1"></a></li></ul><div class="redactor-editor redactor-placeholder" contenteditable="true" dir="ltr" placeholder="Постарайтесь дать развернутый ответ, по возможности, приведите примеры, полезные ссылки, разные варианты решения"><p>​</p></div><textarea id="id_body" data-min="50" maxlength="20000" class="form-control" name="body" rows="5" placeholder="Постарайтесь дать развернутый ответ, по возможности, приведите примеры, полезные ссылки, разные варианты решения" dir="ltr" style="display: none;" wfd-invisible="true"></textarea></div>
+            <div>
+                <div class="counter">Введите минимум 50 символов</div>
+            </div>
+            
+        </div>
+    
+
+    
+
+    <div class="form-group">
+        <button id="submit" name="answer" value="answer" type="submit" class="btn btn-primary">Отправить</button>
+    </div>
+</form>
+
+    <script id="comment-form" type="text/html" wfd-invisible="true">
+        <form class="comment-form" action="/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="bJyCcT8zCrpi7NNrj9KKfXKhUjxmsqbtDy7EO3tCQJWb3W52xt4MnvYlbtsJ4nvB">
+    
+
+    <div class="form-group submit">
+        <button type="submit" class="btn btn-sm btn-primary">Отправить</button>
+    </div>
+
+    
+    
+        <div class="form-group body">
+            <textarea id="id_body" data-min="15" maxlength="200" class="form-control" name="body" rows="3"
+                placeholder="Используйте комментарии для уточнений деталей, чтобы ответить на вопрос используйте форму ответа ниже"
+                ></textarea>
+            <div>
+                <div class="counter">Введите минимум 15 символов</div>
+            </div>
+            
+        </div>
+    
+
+    <input type="hidden" name="post_id" id="id_post_id">
+    <input type="hidden" name="post_type" id="id_post_type">
+    <input value="comment" name="comment" type="hidden" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+    </script>
+
+
+        </div>
+        <div class="col-md-3 col sidebar">
+
+            
+
+
+
+            
+
+
+
+            
+
+    
+        <div class="also">
+            <h4>Еще в рубрике</h4>
+            
+                <a class="also-card" href="https://progi.pro/preobrazovanie-dvoichnoy-funkcii-chteniya-iz-s-v-s-78572">
+                    <div class="count positive solved">90</div> <div class="subject">Преобразование двоичной функции чтения из С++ в С#</div>
+                </a>
+            
+                <a class="also-card" href="https://progi.pro/sobitie-selectedindexchanged-v-comboboxcolumn-v-datagridview-78570">
+                    <div class="count positive solved">78</div> <div class="subject">Событие SelectedIndexChanged в ComboBoxColumn в Datagridview</div>
+                </a>
+            
+                <a class="also-card" href="https://progi.pro/valueinjecter-kak-ignorirovat-nekotorie-svoystva-vo-vremya-vipolneniyainjectfrom-unflatloopvalueinjection-dannie-78564">
+                    <div class="count positive solved">100</div> <div class="subject">ValueInjecter: как игнорировать некоторые свойства во время выполнения.InjectFrom &lt;unflatloopvalueinjection&gt; (данные)?</div>
+                </a>
+            
+                <a class="also-card" href="https://progi.pro/proverte-yavlyaetsya-li-mnogougolnik-samoperesekayushimsya-78561">
+                    <div class="count positive solved">184</div> <div class="subject">Проверьте, является ли многоугольник самопересекающимся</div>
+                </a>
+            
+        </div>
+    
+
+    
+        <div class="also">
+            <h4>Другие вопросы</h4>
+            
+                <a class="also-card" href="https://progi.pro/kakim-obrazom-vi-bi-predlozhili-vernut-znachenie-po-umolchaniyu-kotoroe-ne-yavlyaetsya-nulevim-5662510">
+                    <div class="count positive solved">63</div> <div class="subject">Каким образом вы бы предложили вернуть значение по умолчанию, которое не является нулевым?</div>
+                </a>
+            
+                <a class="also-card" href="https://progi.pro/kak-poluchit-fayli-izobrazheniy-iz-imageliststreamer-v-resx-5244228">
+                    <div class="count positive solved">63</div> <div class="subject">Как получить файлы изображений из ImageListStreamer в resx?</div>
+                </a>
+            
+                <a class="also-card" href="https://progi.pro/kak-pravilno-proverit-nhibernate-fetchmodeeager-3229367">
+                    <div class="count positive solved">63</div> <div class="subject">Как правильно проверить NHibernate FetchMode.Eager?</div>
+                </a>
+            
+        </div>
+    
+
+
+
+            
+
+
+        </div>
+    </div>
+
+                            </div>
+
+                            <div id="breadcrumbs"><ol class="breadcrumb">
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://progi.pro/" itemprop="url"><span itemprop="title">Вопросы</span></a></li>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://progi.pro/c-t78" itemprop="url"><span itemprop="title">C#</span></a></li>
+    <li class="active">Как получить все Показать текст с веб-страницы в С#</li>
+</ol></div><!--/breadcrumbs-->
+
+                        </div>
+                    </div><!--/.row-->
+                </div>
+            </div><!--/.container-->
+
+            <div class="footer-block base">
+                <div class="container">
+                    <div id="footer" class="row">
+                        <div class="col-md-12">
+                            <div class="footer-wrapper">
+                                
+                                    <br>Вопросы и ответы представляются на сайте progi.pro сугубо для ознакомительных целей.
+                                
+                                <div class="copyright-text">
+                                    © 2000-2021 progi.pro. Вся информация представлена «как есть», все права защищены.
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.row-->
+                </div><!--/.container-->
+
+                
+
+                
+                
+<script type="text/javascript" wfd-invisible="true">
+new Image().src = "//counter.yadro.ru/hit?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,150))+
+";"+Math.random();</script>
+                
+<script async="" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/js" wfd-invisible="true"></script>
+<script wfd-invisible="true">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70257660-5');
+</script>
+
+            </div>
+
+            
+                <div id="login-tooltip" class="tip" wfd-invisible="true">
+    <div class="inner">
+        Чтобы <span class="login-to">задавать вопросы</span>, пожалуйста,<br><span class="login-link-place"></span>
+        <a href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#" class="glyphicon glyphicon-remove fold"></a>
+    </div>
+</div>
+            
+            
+<div id="claiming-tooltip" class="tip" wfd-invisible="true">
+    <div class="inner">
+        Выберите тему жалобы:
+        <br>
+        <a id="claiming-tooltip-claiming-link" class="switch" href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#">Авторство текста</a>
+        <br>
+        <a data-url="L2ZlZWRiYWNr" class="b64-nav" rel="nofollow" href="https://progi.pro/feedback">Другая проблема</a>
+        <a href="https://progi.pro/kak-poluchit-vse-pokazat-tekst-s-veb-stranici-v-s-78567#" class="glyphicon glyphicon-remove fold"></a>
+    </div>
+</div>
+
+        
+    
+    
+
+
+
+<span class="redactor-toolbar-tooltip redactor-toolbar-tooltip-0 redactor-toolbar-tooltip-pre" style="display: none;" wfd-invisible="true">Код</span><span class="redactor-toolbar-tooltip redactor-toolbar-tooltip-0 redactor-toolbar-tooltip-blockquote" style="display: none;" wfd-invisible="true">Цитата</span><span class="redactor-toolbar-tooltip redactor-toolbar-tooltip-0 redactor-toolbar-tooltip-unorderedlist" style="display: none;" wfd-invisible="true">• Список</span><span class="redactor-toolbar-tooltip redactor-toolbar-tooltip-0 redactor-toolbar-tooltip-link" style="display: none;" wfd-invisible="true">Ссылка</span><span class="redactor-toolbar-tooltip redactor-toolbar-tooltip-0 redactor-toolbar-tooltip-image" style="display: none;" wfd-invisible="true">Изображение</span><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled" wfd-invisible="true"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" allow="attribution-reporting" data-google-container-id="a!1" data-load-complete="true"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_6914918398329" name="google_osd_static_frame" wfd-invisible="true" style="display: none; width: 0px; height: 0px;" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/saved_resource(2).html"></iframe><iframe src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/aframe.html" width="0" height="0" style="display: none;" wfd-invisible="true"></iframe></body><iframe id="google_esf" name="google_esf" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/zrt_lookup.html" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; clear: none !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background-color: transparent;" aria-hidden="true" data-ad-status="filled"><ins id="aswift_1_expand" style="display: inline-table !important; border: none !important; height: 100vh !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; width: 100vw !important; background-color: transparent !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_1_anchor" style="display: block !important; border: none !important; height: 100vh !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; width: 100vw !important; background-color: transparent !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_1" name="" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="" height="" frameborder="0" src="./Как Получить Все Показать Текст С Веб-Страницы В С#_files/zrt_lookup(1).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" allow="attribution-reporting" style="width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; position: absolute !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;" data-google-container-id="a!2" data-google-query-id="CLW4iOrcs_ICFdHrmgodBlsJ9g" data-load-complete="true"></iframe></ins></ins></ins></html>

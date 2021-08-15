@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://fooobar.com/questions/2972498/how-to-get-text-off-a-webpage -->
+<html lang="ru-RU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Как получить текст с веб-страницы? - c# | fooobar.com</title>
+<link rel="preload" as="script" href="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/tag.js.загрузка">
+<link rel="preload" as="font" type="font/woff2" href="https://fooobar.com/fonts/glyphicons-halflings-regular.woff2" crossorigin="">
+
+<meta name="viewport" content="initial-scale=1.0, width=device-width">
+<meta name="theme-color" content="#ffffff">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Я хочу получить текст с веб-страницы на С#. 
+Я не хочу получать HTML-код, я хочу, чтобы текст был удален с веб-страницы. Например, если я набираю &quot;&amp;lt;b&amp;gt;cake&amp;lt;/b&amp;gt;&quot;, я хочу торт, а не теги.">
+<link href="https://fooobar.com/questions/2972498/how-to-get-text-off-a-webpage" rel="canonical">
+<link href="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/bootstrap.min.css" rel="stylesheet">
+<link href="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/github-gist.css" rel="stylesheet">
+<link href="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/site.css" rel="stylesheet"> <link rel="stylesheet" href="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/vad.css">
+<script type="text/javascript" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/context.js.загрузка" async=""></script><script type="text/javascript" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/context.js.загрузка" async=""></script><script type="text/javascript" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/context.js.загрузка" async=""></script><script type="text/javascript" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/context.js.загрузка" async=""></script><script type="text/javascript" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/context.js.загрузка" async=""></script><script async="" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/tag.js.загрузка"></script><script src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/mvpt.min.js.загрузка" id="ms" async=""></script><script charset="utf-8" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/3def39055e9db7d887e2.js.загрузка" crossorigin="anonymous" importance="high"></script><script async="" crossorigin="anonymous" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/host.js.загрузка"></script><link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://yastatic.net/partner-code-bundles/42626/context_static.js"><link rel="preconnect" href="https://ads.adfox.ru/"><script charset="utf-8" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/e719f8a701e90618b0e7.js.загрузка" crossorigin="anonymous" importance="high"></script><script charset="utf-8" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/1a27454f1f0efa343ff4.js.загрузка" crossorigin="anonymous" importance="high"></script><script charset="utf-8" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/396a1167d70821abf186.js.загрузка" crossorigin="anonymous" importance="high"></script><script charset="utf-8" src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/2710944224f5f6585ce7.js.загрузка" crossorigin="anonymous" importance="high"></script></head><body><div id="wa" style="display:block; overflow:hidden; position: fixed; right: 1px; bottom: 1px;z-index: 9999; width: 420px;"><div id="adv" style="display: none;"><div id="mv-content-roll-2732" class="mv-content-roll-2732-wrap" style="padding: 0px; margin: 0px; display: none; overflow: hidden; text-align: center; float: none; clear: both; width: 100%; height: 1px; transition: none 0s ease 0s; opacity: 0;"><div class="mv-content-roll-2732-inner-wrap" style="position: relative; display: inline-block; width: 420px; height: 240px;"><div class="mv-content-roll-2732-t-node" style="padding: 0px; margin: 0px; display: inline-block; background-color: transparent; transition: none 0s ease 0s; opacity: 0.001; pointer-events: none; transform: translateZ(0px); width: 100%; height: 100%; position: static; inset: auto; z-index: 0; box-shadow: none;"><div class="mv-content-roll-2732-t-div" style="margin: 0px; position: relative; overflow: hidden; width: 100%; height: 100%;"></div><div title="Close" class="mv-content-roll-2732-float-close" style="position: absolute; color: white; background-color: black; border-radius: 50%; z-index: 9999; font-size: 14px; width: 20px; height: 20px; line-height: 20px; text-align: center; cursor: pointer; right: 3px; top: -22px; display: none;">10</div></div></div></div></div></div>
+<script type="text/javascript">    
+        var adv = document.getElementById('adv');
+var ms = document.getElementById('ms');
+
+if (adv !== null && adv !== undefined) {adv.remove();}
+if (ms !== null && ms !== undefined) {ms.remove();}
+
+delete moevideo;
+delete moevideoQueue;
+
+var moevideoQueue = moevideoQueue || [];
+var d=document.createElement('div');
+d.id = 'adv';
+document.getElementById('wa').appendChild(d);
+var m=document.createElement("script");
+m.src="https://moevideo.biz/embed/js/mvpt.min.js";
+m.id = 'ms';
+m.async=true;
+document.head.appendChild(m);
+moevideoQueue.push(function () {
+    moevideo.ContentRoll({
+        mode:"manual",
+        el:"#adv",
+        floatWidth:"419",
+        floatPosition:"bottom right",
+        floatCloseTimeout:10,
+        ignorePlayers:true,
+        floatMode:"full",
+        maxRefresh: 4,
+        callback: function(event) {
+            console.warn("event1", event);
+            if (event === "finish" || event === "error") {
+    (function(d,f){
+        var ai=d.createElement("script");
+        ai.src=f;
+        ai.async=true;
+        ai.onload=function(){
+            document.getElementById('wa').style.display = 'none';
+            vinit([
+                "https://bazr.ru:443/vast?cmid=101&playlistId=50315",
+                "https://moevideo.biz:443/vast?ref=fooobar.com&impressionAfterPaid=1&vl=1&es=1&maxAds=5",
+            ],
+            function() {
+                console.warn('twice');
+                var adv = document.getElementById('adv');
+                var ms = document.getElementById('ms');
+                
+                if (adv !== null && adv !== undefined) {adv.remove();}
+                if (ms !== null && ms !== undefined) {ms.remove();}
+                
+                delete moevideo;
+                delete moevideoQueue;
+                
+                window.moevideoQueue = moevideoQueue || [];
+                var d=document.createElement('div');
+                d.id = 'adv';
+                document.getElementById('wa').appendChild(d);
+                document.getElementById('wa').style.display = 'block';
+                var m=document.createElement("script");
+                m.src="https://moevideo.biz/embed/js/mvpt.min.js";
+                m.id = 'ms';
+                m.async=true;
+                document.head.appendChild(m);
+                moevideoQueue.push(function () {
+                    moevideo.ContentRoll({
+                        mode:"manual",
+                        el:"#adv",
+                        floatWidth:"419",
+                        floatPosition:"bottom right",
+                        floatCloseTimeout:10,
+                        ignorePlayers:true,
+                        floatMode:"full",
+                        maxRefresh: 4,
+                        callback: function(event) {
+                            console.warn("event2", event);
+                            if (event === "finish" || event === "error") {
+                                (function(d,f){
+                                    var ai=d.createElement("script");
+                                    ai.src=f;
+                                    ai.async=true;
+                                    ai.onload=function(){
+                                        document.getElementById('wa').style.display = 'none';
+                                        vinit([
+                                            "https://bazr.ru:443/vast?cmid=101&playlistId=50315",
+                                            "https://moevideo.biz:443/vast?ref=fooobar.com&impressionAfterPaid=1&vl=1&es=1&maxAds=5",
+                                        ],
+                                        function() {
+                                            console.warn('three');
+                                            var adv = document.getElementById('adv');
+                                            var ms = document.getElementById('ms');
+                                            
+                                            if (adv !== null && adv !== undefined) {adv.remove();}
+                                            if (ms !== null && ms !== undefined) {ms.remove();}
+                                            
+                                            delete moevideo;
+                                            delete moevideoQueue;
+                                            
+                                            window.moevideoQueue = moevideoQueue || [];
+                                            var d=document.createElement('div');
+                                            d.id = 'adv';
+                                            document.getElementById('wa').appendChild(d);
+                                            document.getElementById('wa').style.display = 'block';
+                                            var m=document.createElement("script");
+                                            m.src="https://moevideo.biz/embed/js/mvpt.min.js";
+                                            m.id = 'ms';
+                                            m.async=true;
+                                            document.head.appendChild(m);
+                                            moevideoQueue.push(function () {
+                                                moevideo.ContentRoll({
+                                                    mode:"manual",
+                                                    el:"#adv",
+                                                    floatWidth:"419",
+                                                    floatPosition:"bottom right",
+                                                    floatCloseTimeout:10,
+                                                    ignorePlayers:true,
+                                                    floatMode:"full",
+                                                    maxRefresh: 4,
+                                                    callback: function(event) {
+                                                        console.warn("event3", event);
+                                                        if (event === "finish" || event === "error") {
+                                                            (function(d,f){
+                                                                var ai=d.createElement("script");
+                                                                ai.src=f;
+                                                                ai.async=true;
+                                                                ai.onload=function(){
+                                                                    document.getElementById('wa').style.display = 'none';
+                                                                    vinit([
+                                                                        "https://bazr.ru:443/vast?cmid=101&playlistId=50315",
+                                                                        "https://moevideo.biz:443/vast?ref=fooobar.com&impressionAfterPaid=1&vl=1&es=1&maxAds=5",
+                                                                    ])
+                                                                };
+                                                                d.head.appendChild(ai);
+                                                            })(document, '/js/vad.js?v=1.27');
+                                                        }
+                                                    }
+                                                });
+                                            });
+                                        })
+                                    };
+                                    d.head.appendChild(ai);
+                                })(document, '/js/vad.js?v=1.27');
+                            }
+                        }
+                    });
+                });
+            }
+        )};
+        d.head.appendChild(ai);
+    })(document, '/js/vad.js?v=1.27');
+}
+        }
+    });
+});
+    </script> <link rel="apple-touch-icon" sizes="180x180" href="https://fooobar.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fooobar.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fooobar.com/favicon-16x16.png">
+<script src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/jquery.min.js.загрузка" type="text/javascript"></script>
+<script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(56591014, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
+    </script>
+<style>
+        script {
+            display: none!important;
+        }
+    </style>
+
+
+<noscript><div><img src="https://mc.yandex.ru/watch/56591014" style="position:absolute; left:-9999px;" alt=""/></div></noscript>
+<nav id="w0" class="navbar-default navbar-fixed-top navbar"><div class="container flex"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w0-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="https://fooobar.com/"><span class="name">fooobar<span>com</span></span></a></div><div id="w0-collapse" class="collapse navbar-collapse"><div class="search hidden-xs">
+<form class="search-top" action="https://fooobar.com/search" method="get">
+<input autocomplete="off" autocapitalize="none" aria-label="Найти" title="Поиск" type="text" name="query" placeholder="поиск...">
+</form>
+</div>
+<div class="mbord">
+<ul id="w1" class="navbar-nav navbar-right nav"><li class="active"><a href="https://fooobar.com/questions">Вопросы</a></li>
+<li><a href="https://fooobar.com/tags">Теги</a></li>
+<li class="blue hidden-xs hidden-sm"><a href="https://fooobar.com/want-register">Регистрация</a></li></ul> <div class="search hidden-lg hidden-md hidden-sm">
+<form class="search-top" action="https://fooobar.com/search" method="get">
+<input autocomplete="off" autocapitalize="none" aria-label="Найти" title="Поиск" type="text" name="query" placeholder="поиск...">
+</form>
+</div>
+</div>
+</div></div></nav><script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.navbar-toggle').addEventListener('click', function () {
+            var menu = document.getElementById(this.dataset.target.substr(1));
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+            } else {
+                menu.classList.add('open');
+            }
+        });
+    });
+</script>
+<div class="wrap ">
+<div id="yandex_rtb_R-A-248011-28" style="margin-bottom: 20px; width: 100%; display: block; margin-top: -19px;"></div>
+<script type="text/javascript">
+        (function(w, d, n, s, t) {
+            w[n] = w[n] || [];
+            w[n].push(function() {
+                Ya.Context.AdvManager.render({
+                    blockId: "R-A-248011-28",
+                    renderTo: "yandex_rtb_R-A-248011-28",
+                    async: true
+                });
+            });
+            t = d.getElementsByTagName("script")[0];
+            s = d.createElement("script");
+            s.type = "text/javascript";
+            s.src = "//an.yandex.ru/system/context.js";
+            s.async = true;
+            t.parentNode.insertBefore(s, t);
+        })(this, this.document, "yandexContextAsyncCallbacks");
+    </script>
+<div class="container">
+<div itemscope="" itemtype="http://schema.org/QAPage">
+<div class="right-col">
+<div class="hidden-xs hidden-sm sidebar">
+<div class="c55529fceada6cc641c1797bd55893ff9" style="width: 300px;">
+<div id="yandex_rtb_R-A-248011-22"></div>
+</div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-248011-22",
+                renderTo: "yandex_rtb_R-A-248011-22",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(){
+        window.navHeight = $('#w0').outerHeight();
+        window.wh = $(window).height();
+        setInterval(function () {
+            window.navHeight = $('#w0').outerHeight();
+            window.wh = $(window).height();
+        });
+
+        var awrap = $('.c55529fceada6cc641c1797bd55893ff9'),
+            lastScrollTop = 0;
+
+        $(window).on('scroll', function () {
+            var st = $(this).scrollTop(),
+                ot = awrap.offset().top,
+                h = awrap.height(),
+                dh = $(document).height();
+
+            console.log(st, 'right_coll');
+
+            if (st <= 290) {
+                awrap.css({position : 'initial'});
+            } else {
+                if (h > window.wh) {
+                    if (st > lastScrollTop
+                        && (st + window.wh) >= h + ot + 20
+                    ) {
+                        if ((st + window.wh) <= dh - 152) {
+                            awrap.css({position: 'fixed'});
+                            awrap.css({bottom: 0});
+                            awrap.css({top: 'initial'});
+                        } else {
+                            awrap.css({position : 'absolute'});
+                            awrap.css({top : dh - h - 152 - 20});
+                            awrap.css({bottom: 'initial'});
+                        }
+                    } else if (st < lastScrollTop && st <= ot-20-window.navHeight) {
+                        awrap.css({position: 'fixed'});
+                        awrap.css({top: 20+window.navHeight});
+                        awrap.css({bottom: 'initial'});
+                    } else if (awrap.css('position') !== 'absolute' && awrap.css('position') !== 'initial' && awrap.css('position') !== 'static') {
+                        awrap.css({position : 'absolute'});
+                        awrap.css({top : ot});
+                        awrap.css({bottom: 'initial'});
+                    }
+                } else {
+                    awrap.css({position: 'fixed'});
+                    awrap.css({top: 20+window.navHeight});
+                    awrap.css({bottom: 'initial'});
+                }
+            }
+            lastScrollTop = st;
+        });
+    });
+</script> </div>
+</div>
+<div class="main-col" itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+<div class="question-header">
+<h1 itemprop="name">Как получить текст с веб-страницы?</h1>
+</div>
+<div class="question">
+<div class="question-row">
+<div class="question-text">
+<div class="description" itemprop="text">
+<p>Я хочу получить текст с веб-страницы на С#. <br>
+Я не хочу получать HTML-код, я хочу, чтобы текст был удален с веб-страницы. Например, если я набираю "<code>&lt;b&gt;cake&lt;/b&gt;</code>", я хочу торт, а не теги.</p> </div>
+<div class="favorite hidden"><i class="far fa-star"></i></div>
+<div class="votes-question">
+<i class="glyphicon glyphicon-arrow-ups"></i>
+<div class="vote-count greenc" itemprop="upvoteCount">
++2 </div>
+<i class="glyphicon glyphicon-arrow-down"></i>
+</div>
+<div class="tags">
+<a href="https://fooobar.com/questions/tagged/c%23" class="tag" title="показать вопросы с меткой &#39;c#&#39;" rel="tag">c#</a>
+<a href="https://fooobar.com/questions/tagged/visual-studio" class="tag" title="показать вопросы с меткой &#39;visual-studio&#39;" rel="tag">visual-studio</a>
+<a href="https://fooobar.com/questions/tagged/visual-studio-2010" class="tag" title="показать вопросы с меткой &#39;visual-studio-2010&#39;" rel="tag">visual-studio-2010</a>
+<a href="https://fooobar.com/questions/tagged/c%23-4.0" class="tag" title="показать вопросы с меткой &#39;c#-4.0&#39;" rel="tag">c#-4.0</a>
+</div>
+<div class="clearfix"></div>
+<div class="action-time">
+<span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name"><a href="https://stackoverflow.com/users/1036212/marcus" rel="noopener" target="_blank">Marcus</a></span></span> <time title="2011-11-14 22:32" itemprop="dateCreated" datetime="2011-11-14T22:32:07+0000"> 14 нояб. '11 в 22:32</time>
+</div>
+<a class="aa-link" href="https://stackoverflow.com/questions/8129154/how-to-get-text-off-a-webpage" target="_blank" rel="noopener">источник</a>
+<a class="s-link" href="https://fooobar.com/questions/2972498/how-to-get-text-off-a-webpage" title="поделиться">поделиться</a>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+<div class="answers " id="answers_hash">
+<div class="answers-header">
+<span class="pull-left"><span itemprop="answerCount">3</span> ответа</span>
+<div class="clearfix"></div>
+</div>
+<div class="answer-pager hidden">
+</div>
+<div class="answer accepted" id="7467142_hash" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+<div class="answer-row">
+<div class="answer-text">
+<div class="desc" itemprop="text">
+<p>Используйте библиотеку HTML Agility Pack.</p>
+<p>Эта очень тонкая библиотека для анализа HTML, для вашего требования используйте этот код:</p>
+<div id="yandex_rtb_R-A-248011-3"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-248011-3",
+                renderTo: "yandex_rtb_R-A-248011-3",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+<pre class="prettyprint-override"><code class="hljs cs">    HtmlAgilityPack.HtmlWeb web = <span class="hljs-keyword">new</span> HtmlAgilityPack.HtmlWeb();
+    HtmlAgilityPack.HtmlDocument doc = web.Load(<span class="hljs-string">"Yor Path(local,web)"</span>); 
+    <span class="hljs-keyword">var</span> result=doc.DocumentNode.SelectNodes(<span class="hljs-string">"//body//text()"</span>);<span class="hljs-comment">//return HtmlCollectionNode</span>
+    <span class="hljs-keyword">foreach</span>(<span class="hljs-keyword">var</span> node <span class="hljs-keyword">in</span> result)
+    {
+        <span class="hljs-keyword">string</span> AchivedText=node.InnerText;<span class="hljs-comment">//Your desire text</span>
+    }
+</code></pre> </div>
+<div class="votes-answer">
+<i class="glyphicon glyphicon-arrow-ups"></i>
+<div class="vote-count greenc" itemprop="upvoteCount">
++4 </div>
+<i class="glyphicon glyphicon-arrow-down"></i>
+</div>
+<div class="clearfix"></div>
+<div class="action-time">
+<span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name"><a href="https://stackoverflow.com/users/440030/reza-arabqaeni" rel="noopener" target="_blank">Reza ArabQaeni</a></span></span> <time title="2011-11-14 22:46" itemprop="dateCreated" datetime="2011-11-14T22:46:05+0000"> 14 нояб. '11 в 22:46</time>
+</div>
+<a class="aa-link" href="https://stackoverflow.com/questions/8129154/how-to-get-text-off-a-webpage/8129294#8129294" target="_blank" rel="noopener">источник</a>
+<a itemprop="url" class="s-link" href="https://fooobar.com/questions/2972498/how-to-get-text-off-a-webpage/7467142#7467142" title="поделиться">поделиться</a>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+<div class="answer rltd" id="7467141_hash" itemscope="" itemtype="http://schema.org/Answer" itemprop="suggestedAnswer">
+<div class="answer-row">
+<div class="answer-text">
+<div class="desc" itemprop="text">
+<p>Вы можете снимать теги с помощью регулярных выражений, таких как <sup> 2</sup> (простой пример):</p>
+<pre class="prettyprint-override"><code class="hljs coffeescript"><span class="hljs-regexp">//</span> You can <span class="hljs-keyword">import</span> System.Text.RegularExpressions <span class="hljs-keyword">for</span> convenience, <span class="hljs-keyword">of</span> course.
+System.Text.RegularExpressions.Regex tag = <span class="hljs-keyword">new</span> System.Text.RegularExpressions.Regex(<span class="hljs-string">"\&lt;.+?\&gt;"</span>);
+myHTML = tag.Replace(myHTML, String.Empty);
+</code></pre>
+<div id="yandex_rtb_R-A-248011-4"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-248011-4",
+                renderTo: "yandex_rtb_R-A-248011-4",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+<p>Но если вам нужно извлечь большие объемы хорошо структурированных данных, вам может быть лучше использовать библиотеку HTML <sup> 1</sup>. (Если веб-страница - XHTML, тем лучше - используйте классы <code>System.Xml</code>.)</p>
+<p> <sup> 1</sup> Например, <a href="https://htmlagilitypack.codeplex.com/" rel="nofollow noreferrer" src="">http://htmlagilitypack.codeplex.com/</a>. <br><sup> 2</sup> Это может иметь непреднамеренные побочные эффекты, если вы пытаетесь получить данные из JavaScript или данные находятся внутри атрибута элемента и содержат угловые скобки. Вам также необходимо принять escape-последовательности, например <code>&amp;amp;</code>.</p> </div>
+<div class="votes-answer">
+<i class="glyphicon glyphicon-arrow-ups"></i>
+<div class="vote-count greenc" itemprop="upvoteCount">
++1 </div>
+<i class="glyphicon glyphicon-arrow-down"></i>
+</div>
+<div class="clearfix"></div>
+<div class="action-time">
+<span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name"><a href="https://stackoverflow.com/users/707111/ry" rel="noopener" target="_blank">Ry-</a></span></span> <time title="2011-11-14 22:35" itemprop="dateCreated" datetime="2011-11-14T22:35:46+0000"> 14 нояб. '11 в 22:35</time>
+</div>
+<a class="aa-link" href="https://stackoverflow.com/questions/8129154/how-to-get-text-off-a-webpage/8129196#8129196" target="_blank" rel="noopener">источник</a>
+<a itemprop="url" class="s-link" href="https://fooobar.com/questions/2972498/how-to-get-text-off-a-webpage/7467141#7467141" title="поделиться">поделиться</a>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+<div class="similar">
+<a class="other-answers" onclick="if (!window.__cfRLUnblockHandlers) return false; scrollToOtherAns(&#39;7467143_hash&#39;);" href="javascript:void(0);"><i class="glyphicon glyphicon-arrow-down" style="font-size: 9px;margin: 0 4px;"></i>другие ответы</a><p>Связанные вопросы</p><div><div class="votes-question "><div class="vote-count">0</div></div><a href="https://fooobar.com/questions/12182361/get-some-specific-text-with-a-specfic-class-from-a-website-after-sign-in-c" target="_blank"> Получите определенный текст со специфицированным классом с веб-сайта после входа в С#</a></div><br><p>Похожие вопросы</p><div><div class="votes-question accepted"><div class="vote-count">3575</div></div><a href="https://fooobar.com/questions/238/how-do-i-enumerate-an-enum" target="_blank">Как перечислить перечисление?</a></div><div><div class="votes-question accepted"><div class="vote-count">2058</div></div><a href="https://fooobar.com/questions/484/how-do-i-get-a-consistent-byte-representation-of-strings-in-c-without-manually-specifying-an-encoding" target="_blank">Как получить согласованное байтовое представление строк в С# без ручного указания кодировки?</a></div><div><div class="votes-question green"><div class="vote-count">1476</div></div><a href="https://fooobar.com/questions/638/hidden-features-of-c" target="_blank">Скрытые особенности С#?</a></div><div><div class="votes-question accepted"><div class="vote-count">1424</div></div><a href="https://fooobar.com/questions/11329/fixing-the-breakpoint-will-not-currently-be-hit-no-symbols-have-been-loaded-for-this-document" target="_blank">Как исправить "Точка останова в настоящий момент не будет удалена. Для этого документа не было загружено никаких символов". предупреждение?</a></div><div><div class="votes-question accepted"><div class="vote-count">1270</div></div><a href="https://fooobar.com/questions/11585/why-not-inherit-from-listt" target="_blank">Почему не наследовать от List &lt;T&gt;?</a></div><div><div class="votes-question accepted"><div class="vote-count">771</div></div><a href="https://fooobar.com/questions/7073/how-should-i-convert-a-string-to-an-enum-in-c" target="_blank"> Преобразовать строку в перечисление в С#</a></div><div><div class="votes-question accepted"><div class="vote-count">632</div></div><a href="https://fooobar.com/questions/13786/interop-type-cannot-be-embedded" target="_blank">Тип Interop не может быть встроен</a></div><div><div class="votes-question accepted"><div class="vote-count">543</div></div><a href="https://fooobar.com/questions/18637/c-datetime-to-yyyymmddhhmmss-format" target="_blank">С# DateTime в формате "YYYYMMDDHHMMSS" </a></div><div><div class="votes-question accepted"><div class="vote-count">476</div></div><a href="https://fooobar.com/questions/16999/getting-all-types-that-implement-an-interface" target="_blank">Получение всех типов, реализующих интерфейс</a></div><div><div class="votes-question accepted"><div class="vote-count">448</div></div><a href="https://fooobar.com/questions/17073/how-to-execute-command-line-in-c-get-std-out-results" target="_blank">Как выполнить: выполнить командную строку на С#, получить результаты STD OUT</a></div> </div>
+ <div class="answer last bt" id="7467143_hash" itemscope="" itemtype="http://schema.org/Answer" itemprop="suggestedAnswer">
+<div class="answer-row">
+<div class="answer-text">
+<div class="desc" itemprop="text">
+<p>Это зависит. <strong> Если</strong> ваше приложение загружает веб-страницу с помощью компонента WebBrowser, этот компонент автоматически выполняет синтаксический разбор в фоновом режиме (подобно Internet Explorer). Просто пройдите дерево DOM и извлеките текст, который вы хотите. Вы найдете <a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.htmlelement.innertext.aspx" rel="nofollow noreferrer" src="">свойство HtmlElement.InnerText</a> особенно полезно:)</p> </div>
+<div class="votes-answer">
+<i class="glyphicon glyphicon-arrow-ups"></i>
+<div class="vote-count greenc" itemprop="upvoteCount">
++1 </div>
+<i class="glyphicon glyphicon-arrow-down"></i>
+</div>
+<div class="clearfix"></div>
+<div class="action-time">
+<span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name"><a href="https://stackoverflow.com/users/600135/kol" rel="noopener" target="_blank">kol</a></span></span> <time title="2011-11-14 22:52" itemprop="dateCreated" datetime="2011-11-14T22:52:21+0000"> 14 нояб. '11 в 22:52</time>
+</div>
+<a class="aa-link" href="https://stackoverflow.com/questions/8129154/how-to-get-text-off-a-webpage/8129366#8129366" target="_blank" rel="noopener">источник</a>
+<a itemprop="url" class="s-link" href="https://fooobar.com/questions/2972498/how-to-get-text-off-a-webpage/7467143#7467143" title="поделиться">поделиться</a>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+<div class="answer-pager hidden">
+</div>
+
+<div id="yandex_rtb_R-A-248011-7"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-248011-7",
+                renderTo: "yandex_rtb_R-A-248011-7",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+</div>
+<div class="bottom-notice m-b-50">
+<p>Посмотрите другие вопросы по меткам <a href="https://fooobar.com/questions/tagged/c%23" class="tag" title="показать вопросы с меткой &#39;c#&#39;" rel="tag">c#</a>
+<a href="https://fooobar.com/questions/tagged/visual-studio" class="tag" title="показать вопросы с меткой &#39;visual-studio&#39;" rel="tag">visual-studio</a>
+<a href="https://fooobar.com/questions/tagged/visual-studio-2010" class="tag" title="показать вопросы с меткой &#39;visual-studio-2010&#39;" rel="tag">visual-studio-2010</a>
+<a href="https://fooobar.com/questions/tagged/c%23-4.0" class="tag" title="показать вопросы с меткой &#39;c#-4.0&#39;" rel="tag">c#-4.0</a>
+или
+<a class="btn btn-sm btn-block btn-primary m-t-5" href="https://fooobar.com/want-register">Задайте вопрос</a> </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer">
+<div class="container">
+<div class="row relative">
+<div class="col-sm-9">
+<ul>
+<li><a href="https://fooobar.com/policy/opt-out">Opt out policy</a></li>
+</ul>
+</div>
+<div class="col-sm-3 ntf">
+<div class="license">
+content licensed under <a class="srl" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow noopener noreferrer license" target="_blank">cc by-sa 4.0</a> with attribution required
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/highlight.js.загрузка" type="text/javascript"></script>
+<script src="./Как получить текст с веб-страницы_ - c# _ fooobar.com_files/site.js.загрузка" type="text/javascript"></script>
+
+</body></html>

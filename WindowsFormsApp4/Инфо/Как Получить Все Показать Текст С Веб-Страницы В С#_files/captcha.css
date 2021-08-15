@@ -1,0 +1,11 @@
+#div_id_captcha_1 {
+    padding-top: 5px;
+}
+
+.captcha-input-wrapper {
+    max-width: 150px;
+}
+
+img.captcha {
+    margin-bottom: 5px;
+}

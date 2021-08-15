@@ -1,0 +1,316 @@
+var add_comment_buttons;
+var comment_form;
+
+function init_add_comment_buttons () {
+    add_comment_buttons.on('click', function () {
+        var new_form = comment_form.clone();
+        if ($(this).hasClass('first')) {
+            new_form.removeClass('more');
+        } else {
+            new_form.addClass('more');
+        }
+        var post_id = $(this).attr('data-id');
+        var post_type = $(this).attr('data-type');
+        new_form.children('#id_post_id').val(post_id);
+        new_form.children('#id_post_type').val(post_type);
+
+        var url = new_form.attr('action');
+        url += '#' + post_type + '-' + post_id + '-comments';
+        new_form.attr('action', url);
+
+        init_validation(new_form);
+
+        $(this).replaceWith(new_form);
+        return false;
+    })
+}
+
+$.postJSON = function(url, data, func) {
+    $.post(url, data, func, 'json');
+};
+
+function init_validation(form) {
+    var textarea = form.find('textarea');
+    var textarea_parent = textarea.parent('div');
+    var min = parseInt(textarea.attr('data-min'), 10);
+    var max = parseInt(textarea.attr('maxlength'), 10);
+    var counter = textarea_parent.find('.counter');
+    var initial_counter_text = counter.text();
+    var textarea_valid = false;
+    var validation_started = false;
+    textarea.keyup(function () {
+        var count = 0;
+        var html = $(this).val();
+        var text = html.replace(/<\/(.*?)>/gi, ' ');
+        text = text.replace(/<(.*?)>/gi, '');
+        text = text.replace(/\t/gi, '');
+        text = text.replace(/\n/gi, ' ');
+        text = text.replace(/\r/gi, ' ');
+        text = $.trim(text);
+
+        if (text !== '') {
+            count = text.length;
+        }
+
+        if (count == 0) {
+            counter.text(initial_counter_text);
+            textarea_valid = false;
+            if (validation_started) {
+                // textarea_parent.removeClass('has-success');
+                textarea_parent.switchClass('has-success', 'has-error', 0);
+                counter.switchClass('label-success', 'label-danger', 0);
+            }
+        } else if (min - count > 0) {
+            counter.text('Еще хотя бы ' + (min - count) + ' ' + label_count(min - count, 'символ') + '...');
+            textarea_valid = false;
+            if (validation_started) {
+                textarea_parent.switchClass('has-success', 'has-error', 0);
+                counter.switchClass('label-success', 'label-danger', 0);
+            }
+        } else if (max - count < 0) {
+            counter.text('Лишних ' + (count - max) + ' ' + label_count(count - max, 'символ') +  '...');
+            textarea_valid = false;
+            if (validation_started) {
+                textarea_parent.switchClass('has-success', 'has-error', 0);
+                counter.switchClass('label-success', 'label-danger', 0);
+            }
+        } else {
+            counter.text('Можно ввести еще ' + (max - count) + ' ' + label_count(max - count, 'символ') + '...');
+            textarea_valid = true;
+            if (validation_started) {
+                textarea_parent.switchClass('has-error', 'has-success', 0);
+                counter.switchClass('label-danger', 'label-success', 0);
+            }
+        }
+    });
+
+    if (textarea.val().length) {
+        textarea.trigger('keyup');
+    }
+
+    var submit = form.find('button');
+    submit.click(function () {
+        // form is not valid
+        if ( ! textarea_valid) {
+            validation_started = true;
+            textarea_parent.addClass('has-error');
+            counter.addClass('label label-danger');
+            return false;
+        }
+    });
+}
+
+
+function validate_email(s) {
+    var re = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    return re.test(s)
+}
+
+function validate_min(s, min) {
+    return s.length < min
+}
+
+function validate_max(s, max) {
+    return s.length > max
+}
+
+
+// region approval
+function replaceWithSuccessMark(jquery_element) {
+    jquery_element.children('span').switchClass('glyphicon-hourglass', 'glyphicon-ok-sign');
+}
+function replaceWithWaitMark(jquery_element, class_for_switching) {
+    jquery_element.children('span').switchClass(class_for_switching, 'glyphicon-hourglass');
+}
+function replaceWithInitialMark(jquery_element, class_for_replacement) {
+    jquery_element.children('span').switchClass('glyphicon-hourglass', class_for_replacement);
+}
+function updateRating(counter, change) {
+    var new_rating = parseInt(counter.text(), 10) + change;
+    counter.text(new_rating);
+    if (new_rating > 0) {
+        if (counter.hasClass('hidden')) {
+            counter.removeClass('hidden');
+        }
+    }
+}
+function process_approval(bound_object, glyphicon_type) {
+    if ( ! bound_object.hasClass('wait')) {
+        bound_object.addClass('wait');
+        replaceWithWaitMark(bound_object, 'glyphicon-' + glyphicon_type);
+        var url = bound_object.attr('data-url');
+        var counter;
+        bound_object.hasClass('favorite') ?
+            counter = bound_object.parent().children('.favorites') :
+            counter = bound_object.parent().children('.votes');
+        $.getJSON(
+            url,
+            // {'pk': pk}, // GET parameters
+            function (json) {
+                if (json['success']) {
+                    updateRating(counter, json['change']);
+                    bound_object.removeClass('wait');
+                    replaceWithInitialMark(bound_object, 'glyphicon-' + glyphicon_type);
+                } else {
+                    // should not get here if everything works fine
+                    console.log('approval has failed');
+                    bound_object.removeClass('wait');
+                }
+            }
+        );
+    }
+}
+function process_solution(bound_object, glyphicon_type) {
+    if ( ! bound_object.hasClass('wait')) {
+        bound_object.addClass('wait');
+        replaceWithWaitMark(bound_object, 'glyphicon-' + glyphicon_type);
+        var url = bound_object.attr('data-url');
+        $.getJSON(
+            url,
+            function (json) {
+                if (json['success']) {
+                    var removal;
+                    bound_object.hasClass('solved') ? removal = true : removal = false;
+                    $('.solution').removeClass('solved');
+                    ! removal && bound_object.addClass('solved');
+                    bound_object.removeClass('wait');
+                    replaceWithInitialMark(bound_object, 'glyphicon-' + glyphicon_type);
+                } else {
+                    // should not get here if everything works fine
+                    console.log('approval has failed');
+                    bound_object.removeClass('wait');
+                }
+            }
+        );
+    }
+}
+function init_approval() {
+    $(".favorite").click(function() {process_approval($(this), 'star', null); return false});
+    $(".upvote").click(function() {process_approval($(this), 'triangle-top', null); return false});
+    $(".downvote").click(function() {process_approval($(this), 'triangle-bottom', null); return false});
+    $(".solution").click(function() {process_solution($(this), 'ok', null); return false});
+}
+// endregion approval
+
+
+$(document).ready(function () {
+    if ($('#data').attr('data-is-anonymous') !== 'True') {
+        add_comment_buttons = $('.add-comment-btn');
+        comment_form = $($('#comment-form').html());
+        init_add_comment_buttons();
+        init_approval();
+    }
+    // init_validation($('#answer-form'));  // commented out because of the switch to wysiwyg editor
+});
+
+
+function label_count(count, label) {
+    count = Math.abs(count);
+    var ending = 'ов';
+    if (count > 10 && count % 100 < 20) {
+        ending = 'ов';
+    } else if (count % 10 == 1) {
+        ending = '';
+    } else if (count % 10 == 2 || count % 10 == 3 || count % 10 == 4) {
+        ending = 'а';
+    }
+    return label + ending
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

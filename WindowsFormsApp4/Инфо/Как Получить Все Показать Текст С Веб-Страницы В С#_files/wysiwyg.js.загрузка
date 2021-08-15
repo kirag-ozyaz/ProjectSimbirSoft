@@ -1,0 +1,87 @@
+$(document).ready(function () {
+    // wysiwyg
+    $(function()
+    {
+        var textarea = $('#id_body');
+        var textarea_parent = textarea.parent('div');
+        var min = parseInt(textarea.attr('data-min'), 10);
+        var max = parseInt(textarea.attr('maxlength'), 10);
+        var counter = textarea_parent.find('.counter');
+        var initial_counter_text = counter.text();
+        var textarea_valid = false;
+        var validation_started = false;
+        var redactor_editor;
+        textarea.redactor({
+            lang: 'ru',
+            buttons: ['pre', 'blockquote', 'unorderedlist', 'link', 'image'],
+            source: true,
+
+            buttonsHide: [],
+            buttonsHideOnMobile: [],
+
+            formatting: [],
+            formattingAdd: false,
+            imageUpload: '/image-upload',
+            plugins: ['counter'],
+            callbacks: {
+                imageUploadError: function(json) {
+                    alert(json.error);
+                },
+                imageUpload: function(image, json) {
+                     $(image).attr('id', json.id);
+                }
+            },
+            counterCallback: function(data)
+            {
+                var count = data.characters;
+
+                if (count == 0) {
+                    counter.text(initial_counter_text);
+                    textarea_valid = false;
+                    if (validation_started) {
+                        // textarea_parent.removeClass('has-success');
+                        textarea_parent.switchClass('has-success', 'has-error', 0);
+                        redactor_editor.switchClass('has-success', 'has-error', 0);
+                        counter.switchClass('label-success', 'label-danger', 0);
+                    }
+                } else if (min - count > 0) {
+                    counter.text('Еще хотя бы ' + (min - count) + ' ' + label_count(min - count, 'символ') + '...');
+                    textarea_valid = false;
+                    if (validation_started) {
+                        textarea_parent.switchClass('has-success', 'has-error', 0);
+                        redactor_editor.switchClass('has-success', 'has-error', 0);
+                        counter.switchClass('label-success', 'label-danger', 0);
+                    }
+                } else if (max - count < 0) {
+                    counter.text('Лишних ' + (count - max) + ' ' + label_count(count - max, 'символ') +  '...');
+                    textarea_valid = false;
+                    if (validation_started) {
+                        textarea_parent.switchClass('has-success', 'has-error', 0);
+                        redactor_editor.switchClass('has-success', 'has-error', 0);
+                        counter.switchClass('label-success', 'label-danger', 0);
+                    }
+                } else {
+                    counter.text('Можно ввести еще ' + (max - count) + ' ' + label_count(max - count, 'символ') + '...');
+                    textarea_valid = true;
+                    if (validation_started) {
+                        textarea_parent.switchClass('has-error', 'has-success', 0);
+                        redactor_editor.switchClass('has-error', 'has-success', 0);
+                        counter.switchClass('label-danger', 'label-success', 0);
+                    }
+                }
+            }
+        });
+        redactor_editor = $('div.redactor-editor');
+        $('#submit').on('click', function () {
+            // form is not valid
+            if ( ! textarea_valid) {
+                validation_started = true;
+                textarea_parent.addClass('has-error');
+                redactor_editor.addClass('has-error');
+                counter.addClass('label label-danger');
+                return false;
+            }
+        });
+        redactor_editor.trigger('keyup');
+    });
+});

@@ -1,0 +1,66 @@
+﻿     Зависит от. Центробанк, например, на своем сайте курс валют предоставляет в виде xml - тут тогда вообще всё просто: xml вида
+  <Valute ID="R01010">
+    <NumCode>36</NumCode>
+    <CharCode>AUD</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Австралийский доллар</Name>
+    <Value>17,9844</Value>
+  </Valute>
+
+	 
+	 public void load()
+        {
+            WebRequest request = WebRequest.Create(new Uri(@"http://www.cbr.ru/scripts/xml_daily.asp?date_req="
+                               +DateTime.Now.ToString("dd.MM.yyyy"))));
+            if (cnnProps.IsProxyUsed) // cnnProps - экземпляр структуры с параметрами коннекта
+            {
+                WebProxy proxy = new WebProxy(cnnProps.ProxyAddress, cnnProps.ProxyPort);
+                proxy.Credentials = new NetworkCredential(cnnProps.Username, cnnProps.Password);
+                request.Proxy = proxy;
+            }
+            HttpWebResponse result = (HttpWebResponse)request.GetResponse();
+            Encoding dataEnc = Encoding.GetEncoding(cnnProps.CodePage);
+            XmlSerializer serializer = new XmlSerializer(typeof(CurrencyList));
+            CurrencyList list = null;
+            using (Stream sData = result.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(sData, dataEnc))
+                {
+                    list = (CurrencyList)serializer.Deserialize(reader);
+                }
+            }
+            result.Close();
+            // Контрольный выстрел в голову для проверки
+            using (StreamWriter writer = new StreamWriter("Currency.xml", false, dataEnc))
+            {
+                serializer.Serialize(writer, list);
+            }
+        }
+
+		    [XmlRoot("ValCurs", Namespace = "")]
+    public class CurrencyList
+    {
+        [XmlAttribute("Date")]
+        public string Date;
+        [XmlAttribute("name")]
+        public string name;
+        [XmlElement("Valute")]
+        public List<Currency> List;
+    }
+
+    [XmlRoot("Valute", Namespace = "")]
+    public class Currency
+    {
+        [XmlAttribute("ID")]
+        public string ID;
+        [XmlElement("NumCode")]
+        public int NumCode;
+        [XmlElement("CharCode")]
+        public string CharCode;
+        [XmlElement("Nominal")]
+        public int Nominal;
+        [XmlElement("Name")]
+        public string Name;
+        [XmlElement("Value")]
+        public string Value;
+    }

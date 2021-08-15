@@ -6,10 +6,15 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HtmlAgilityPack;
+/// <summary>
+/// Приложение, которое позволяет парсить произвольную HTML-страницу и выдает статистику по
+/// количеству уникальных слов.
+/// </summary>
 namespace ProjectSimbirSoft
 {
     public partial class Form1 : Form
@@ -21,6 +26,7 @@ namespace ProjectSimbirSoft
             txtLink.Text = @"https://www.simbirsoft.com/";
         }
 
+        string strResult = "";
         private void button1_Click(object sender, EventArgs e)
         {
             saveFileDialog1.RestoreDirectory = true;
@@ -29,22 +35,55 @@ namespace ProjectSimbirSoft
                 return;
             // получаем выбранный файл
             string filename = saveFileDialog1.FileName;
-            
+
             WebRequest request = WebRequest.Create(txtLink.Text);
             using (WebResponse response = request.GetResponse())
             {
                 using (StreamReader responseReader = new StreamReader(response.GetResponseStream()))
                 {
                     string responseData = responseReader.ReadToEnd();
-                    using (StreamWriter writer = new StreamWriter(filename))
-                    {
-                        writer.Write(responseData);
-                       
-                    }
+                    System.Text.RegularExpressions.Regex tag = new System.Text.RegularExpressions.Regex(@"\<.+?\>");
+                    responseData = tag.Replace(responseData, String.Empty);
+
+
+                    // Для удаления всех тегов html из строки вы можете использовать:
+                    responseData = System.Text.RegularExpressions.Regex.Replace(responseData, "<[^>]*>", "");
+                    // Для удаления определенного тега:
+                    // responseData = System.Text.RegularExpressions.Regex.Replace(responseData, "(?i)<td[^>]*>", "");
+
+                    responseData = System.Text.RegularExpressions.Regex.Replace(responseData, @"\s+", " ");
+                    responseData = System.Text.RegularExpressions.Regex.Replace(responseData, @"[ ]+", " ");
+
+                    //using (StreamWriter writer = new StreamWriter(filename))
+                    //{
+                    //    writer.Write(responseData);
+                    //}
                 }
+
             }
+
             // получим текс из полученного файла
             // распарсим файл
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var client = new HttpClient())
+            {
+                string url =    txtLink.Text;
+
+                HtmlWeb web = new HtmlWeb();
+                HtmlAgilityPack.HtmlDocument doc1 = web.Load(url);
+                string str = doc1.DocumentNode.InnerText;
+
+
+                //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+                //doc.LoadHtml(url);
+                //HtmlNodeCollection q = doc.DocumentNode.SelectNodes(".//td[@class='TableText']//font");
+                // var q = doc.DocumentNode.SelectNodes(".//td[@class='TableText']//font").Last();
+                // string responseData =q.InnerText;
+               
+            }
         }
     }
 }
