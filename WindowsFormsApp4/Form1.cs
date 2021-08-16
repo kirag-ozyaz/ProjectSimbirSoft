@@ -69,24 +69,48 @@ namespace ProjectSimbirSoft
 
         private void button2_Click(object sender, EventArgs e)
         {
+            richTextBoxWeb.Clear();
             using (var client = new HttpClient())
             {
                 string url =    txtLink.Text;
 
                 HtmlWeb web = new HtmlWeb();
-                //web.AutoDetectEncoding = true;
-                //web.OverrideEncoding = Encoding.UTF8;
+                //var Encodings = Encoding.GetEncodings();
+                if (cbEncoding.SelectedIndex != 0)
+                    web.OverrideEncoding = Encoding.GetEncoding(((clEncoding)cbEncoding.SelectedItem).CodePage);
                 HtmlAgilityPack.HtmlDocument doc1 = web.Load(url);
                 string str = doc1.DocumentNode.InnerText;
-                str = str.Replace(@"&nbsp;", " ").Replace(@"&lt;", "<").Replace(@"&gt;", ">").Replace(@"&amp;", "&").Replace(@"&quot;", "\"");
-                var multiCRRegex = new Regex(@"\n\n\n+");
-                str = multiCRRegex.Replace(str, "\n\n");
+                //str = str.Replace(@"&nbsp;", " ").Replace(@"&lt;", "<").Replace(@"&gt;", ">").Replace(@"&amp;", "&").Replace(@"&quot;", "\"");
+
+                str = new Regex(@"&nbsp;+").Replace(str, " ").Trim();
+                str = new Regex(@"&nbsp+").Replace(str, " ").Trim();
+                str = new Regex(@"&lt;+").Replace(str, "<").Trim();
+                str = new Regex(@"&gt;+").Replace(str, ">").Trim();
+                str = new Regex(@"&amp;+").Replace(str, "&").Trim();
+                str = new Regex(@"&quot;+").Replace(str, ">").Trim();
+                str = new Regex(@"&gt;+").Replace(str, "\"").Trim();
+
+                //str = new Regex(@"\n+").Replace(str, " ").Trim();
+                //str = new Regex(@"\t+").Replace(str, " ").Trim();
+                //str = new Regex(@"\r+").Replace(str, " ").Trim();
+
+                richTextBoxWeb.Text = str;
+
+                string[] mystring = str.Split(new Char[] { ' ', ',', '.', '!', '?', '"', ';', ':', '[', ']', '(', ')', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                richTextBoxWeb.Clear();
+
+              foreach(string s1 in mystring)
+                {
+                    richTextBoxWeb.AppendText($"{ s1}\n");
+
+                }
 
                 //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
                 //doc.LoadHtml(url);
                 //HtmlNodeCollection q = doc.DocumentNode.SelectNodes(".//td[@class='TableText']//font");
                 // var q = doc.DocumentNode.SelectNodes(".//td[@class='TableText']//font").Last();
                 // string responseData =q.InnerText;
+                lbEnCodingWeb.Text = $"Текущая кодировка:{doc1.Encoding.EncodingName} BodyName: {doc1.Encoding.BodyName} HeaderName: {doc1.Encoding.HeaderName} WindowsCodePage: {doc1.Encoding.WindowsCodePage}";
 
             }
         }
@@ -94,10 +118,31 @@ namespace ProjectSimbirSoft
         private void Form1_Load(object sender, EventArgs e)
         {
             cbEncoding.Items.Add("AutoDetectEncoding");
-            foreach(var enum1 in cbEncoding.Items)
+            foreach (EncodingInfo enum1 in Encoding.GetEncodings())
             {
-                cbEncoding.Items.Add(enum1);
+                clEncoding item = new clEncoding( enum1.Name, enum1.CodePage, enum1.DisplayName );
+                cbEncoding.Items.Add(item);
             }
+            cbEncoding.SelectedIndex = 0;
+
+        }
+    }
+    class clEncoding
+    {
+        public string Name;
+        public int CodePage;
+        public string DisplayName;
+
+        public clEncoding(string name, int codePage, string displayName)
+        {
+            Name = name;
+            CodePage = codePage;
+            DisplayName = displayName;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}";
         }
     }
 }
