@@ -27,7 +27,7 @@ namespace ProjectSimbirSoft
             txtLink.Text = @"https://www.simbirsoft.com/";
         }
 
-        string strResult = "";
+        //string strResult = "";
         private void button1_Click(object sender, EventArgs e)
         {
             saveFileDialog1.RestoreDirectory = true;
@@ -96,13 +96,23 @@ namespace ProjectSimbirSoft
 
                 richTextBoxWeb.Text = str;
 
-                string[] mystring = str.Split(new Char[] { ' ', ',', '.', '!', '?', '"', ';', ':', '[', ']', '(', ')', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                richTextBoxWeb.Clear();
+                string[] myString = str.Split(new Char[] { ' ', ',', '.', '!', '?', '"', ';', ':', '[', ']', '(', ')', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
 
-              foreach(string s1 in mystring)
+                //richTextBoxWeb.Clear();
+                //foreach (string s1 in myString)
+                //{
+                //    richTextBoxWeb.AppendText($"{ s1}\n");
+
+                //}
+
+                var myList = myString.ToList().GroupBy(p => p).Select(g => new { Name = g.Key, Count = g.Count() });
+
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Name", Type.GetType("System.String"));
+                dt.Columns.Add("Count", Type.GetType("System.Int32"));
+                foreach (var enum1 in myList)
                 {
-                    richTextBoxWeb.AppendText($"{ s1}\n");
-
+                    dt.Rows.Add(new object[] { enum1.Name, enum1.Count});
                 }
 
                 //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
