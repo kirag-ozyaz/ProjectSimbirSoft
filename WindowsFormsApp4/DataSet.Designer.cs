@@ -404,10 +404,10 @@ namespace WindowsFormsApp4 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tblWebsiteRow AddtblWebsiteRow(int Id, string Name) {
+            public tblWebsiteRow AddtblWebsiteRow(string Name) {
                 tblWebsiteRow rowtblWebsiteRow = ((tblWebsiteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Name};
                 rowtblWebsiteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblWebsiteRow);
@@ -451,6 +451,9 @@ namespace WindowsFormsApp4 {
                 base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnName.AllowDBNull = false;
@@ -698,10 +701,10 @@ namespace WindowsFormsApp4 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tblStaticRow AddtblStaticRow(int Id, System.DateTime DataCreate, int idWebSite, int Count) {
+            public tblStaticRow AddtblStaticRow(System.DateTime DataCreate, int idWebSite, int Count) {
                 tblStaticRow rowtblStaticRow = ((tblStaticRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         DataCreate,
                         idWebSite,
                         Count};
@@ -753,6 +756,9 @@ namespace WindowsFormsApp4 {
                 base.Columns.Add(this.columnCount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
             }
