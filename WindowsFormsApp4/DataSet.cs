@@ -6,7 +6,7 @@ namespace WindowsFormsApp4
 {
 
 
-    public partial class DataSet1
+    public partial class dsSimbirSoft
     {
     }
 }

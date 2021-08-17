@@ -73,6 +73,11 @@ namespace ProjectSimbirSoft
             using (var client = new HttpClient())
             {
                 string url =    txtLink.Text;
+                if (!Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
+                {
+                    MessageBox.Show("некорректный формат адреса!","Ошибка",MessageBoxButtons.OK);
+                    return;
+                }
 
                 HtmlWeb web = new HtmlWeb();
                 //var Encodings = Encoding.GetEncodings();
