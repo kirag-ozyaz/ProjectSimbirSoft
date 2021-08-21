@@ -6,13 +6,14 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4DE28505-1CBC-42D2-8852-2E0BD5D6B6D2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp4</RootNamespace>
-    <AssemblyName>WindowsFormsApp4</AssemblyName>
+    <RootNamespace>ProjectSimbirSoft</RootNamespace>
+    <AssemblyName>ProjectSimbirSoft</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -65,24 +65,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet.cs">
-      <DependentUpon>DataSet.xsd</DependentUpon>
+    <Compile Include="dsSimbirSoft.cs">
+      <DependentUpon>dsSimbirSoft.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet.Designer.cs">
+    <Compile Include="dsSimbirSoft.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet.xsd</DependentUpon>
+      <DependentUpon>dsSimbirSoft.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmLogger.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmLogger.Designer.cs">
+      <DependentUpon>frmLogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSimbirSoft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSimbirSoft.Designer.cs">
+      <DependentUpon>frmSimbirSoft.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogger.resx">
+      <DependentUpon>frmLogger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSimbirSoft.resx">
+      <DependentUpon>frmSimbirSoft.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,16 +103,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataSet.xsc">
-      <DependentUpon>DataSet.xsd</DependentUpon>
+    <None Include="dsSimbirSoft.xsc">
+      <DependentUpon>dsSimbirSoft.xsd</DependentUpon>
     </None>
-    <None Include="DataSet.xsd">
-      <SubType>Designer</SubType>
+    <None Include="dsSimbirSoft.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsSimbirSoft.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet.xss">
-      <DependentUpon>DataSet.xsd</DependentUpon>
+    <None Include="dsSimbirSoft.xss">
+      <DependentUpon>dsSimbirSoft.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -218,12 +227,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
+    <Content Include="DataBaseSW.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database1_log.ldf">
+    <Content Include="DataBaseSW_log.ldf">
+      <DependentUpon>DataBaseSW.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="TextFile1.txt" />
     <Content Include="Инфо\C# WebBrowser. Часть 1_ Получение и вывод данных — The Codeby.html" />
@@ -349,6 +358,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{e8c23e9b-40dd-43c1-b0b2-f0b87cc3d0b2}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
